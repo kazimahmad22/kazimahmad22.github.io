@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
+    <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,34 +32,34 @@
     />
 
     <title>Kazim Ahmad</title>
-    <script type="module" crossorigin src="/assets/index-d69440ab.js"></script>
-    <link rel="stylesheet" href="/assets/index-1e3965ac.css">
   </head>
   <body>
-    <div id="home" class="navbar">
-      <h1>KA.</h1>
-      <div class="navMenu">
-        <a href="#home">
-          <p>Home</p>
-        </a>
-        <a href="#servicesSection">
-          <p>Services</p>
-        </a>
-        <a href="#portfolioSection">
-          <p>Portfolio</p>
-        </a>
-        <a href="#testimonialsSection">
-          <p>Testimonials</p>
-        </a>
+    <div class="navContainer">
+      <div id="home" class="navbar">
+        <h1>KA.</h1>
+        <div class="navMenu">
+          <a href="#home">
+            <p>Home</p>
+          </a>
+          <a href="#servicesSection">
+            <p>Services</p>
+          </a>
+          <a href="#portfolioSection">
+            <p>Portfolio</p>
+          </a>
+          <a href="#testimonialsSection">
+            <p>Testimonials</p>
+          </a>
+        </div>
+        <button
+          type="button"
+          onclick="location.href='#contact'  "
+          class="btnPrimary"
+        >
+          Let's Talk
+        </button>
+        <i class="mobMenuIcon fa-solid fa-bars"></i>
       </div>
-      <button
-        type="button"
-        onclick="location.href='#contact'  "
-        class="btnPrimary"
-      >
-        Let's Talk
-      </button>
-      <i class="mobMenuIcon fa-solid fa-bars"></i>
     </div>
     <div class="mobNavMenu">
       <a href="#home">
@@ -75,43 +75,45 @@
         <p>Testimonials</p>
       </a>
     </div>
-    <div class="heroSection">
-      <div class="left">
-        <h1>
-          HEY, I’M KAZIM, A<br />
-          CREATIVE UI/UX DESIGNER <br />
-          AND DEVELOPER.
-        </h1>
-        <div class="underline"></div>
-        <div class="btn">
-          <button
-            type="button"
-            onclick="location.href='#portfolioSection'"
-            class="btnSecondary"
-          >
-            View Portfolios
-          </button>
-          <button
-            type="button"
-            onclick="location.href='#contact'"
-            class="btnPrimary"
-          >
-            Let's Talk
-          </button>
+    <div class="heroContainer">
+      <div class="heroSection">
+        <div class="left">
+          <h1>
+            HEY, I’M KAZIM, A<br />
+            CREATIVE UI/UX DESIGNER <br />
+            AND DEVELOPER.
+          </h1>
+          <div class="underline"></div>
+          <div class="btn">
+            <button
+              type="button"
+              onclick="location.href='#portfolioSection'"
+              class="btnSecondary"
+            >
+              View Portfolios
+            </button>
+            <button
+              type="button"
+              onclick="location.href='#contact'"
+              class="btnPrimary"
+            >
+              Let's Talk
+            </button>
+          </div>
         </div>
+        <img src="./assets/profile picture.png" alt="" />
       </div>
-      <img src="/assets/profile picture-aac47375.png" alt="" />
     </div>
     <div class="skillBar">
-      <img src="/assets/star-9bdf469e.svg" alt="" />
+      <img src="./assets/star.svg" alt="" />
       <p>ui/ux</p>
-      <img src="/assets/star-9bdf469e.svg" alt="" />
+      <img src="./assets/star.svg" alt="" />
       <p>Development</p>
-      <img src="/assets/star-9bdf469e.svg" alt="" />
+      <img src="./assets/star.svg" alt="" />
       <p>Product Design</p>
-      <img src="/assets/star-9bdf469e.svg" alt="" />
+      <img src="./assets/star.svg" alt="" />
       <p>Social Media Design</p>
-      <img src="/assets/star-9bdf469e.svg" alt="" />
+      <img src="./assets/star.svg" alt="" />
       <p>Branding</p>
     </div>
     <div id="servicesSection" class="servicesSection">
@@ -213,14 +215,11 @@
             If you want any kind of the listed services you can simply send us
             an email or leave a message on any social media platform.
           </p>
-          <button
-            type="button"
-            onclick="location.href='#contact'"
-            id="btnContact"
-            class="btnSecondary"
-          >
-            Let's Talk
-          </button>
+          <a href="./portfolio/portfolio.html">
+            <button type="button" id="btnContact" class="btnSecondary">
+              Gallery
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -232,7 +231,7 @@
       </div>
       <div class="cardsContainer">
         <div class="card">
-          <img src="/assets/DP-834b6a2c.png" alt="" />
+          <img src="./assets/DP.png" alt="" />
           <p>
             " This young man- is a great designer. Second time I am working with
             him. He will be creative with the brief. I am very pleased with the
@@ -246,7 +245,7 @@
           </h3>
         </div>
         <div class="card">
-          <img src="/assets/DP-834b6a2c.png" alt="" />
+          <img src="./assets/DP.png" alt="" />
           <p>
             "Very Hard worked. Listens and understands clients needs. Uses his
             own initiative to get the job done. Well done."
@@ -257,7 +256,7 @@
           </h3>
         </div>
         <div class="card">
-          <img src="/assets/DP-834b6a2c.png" alt="" />
+          <img src="./assets/DP.png" alt="" />
           <p>
             "Kazim was patient and incorporated all the requests with multiple
             back and forth. I appreciated the willingness to learn new things
@@ -276,30 +275,30 @@
       <div class="contactContainer">
         <div class="bar">
           <i class="ri-google-fill"></i>
-          <a href="">
+          <a href="mailto:kazimahmad.business@gmail.com">
             <p>kazimahmad.business@gmail.com</p>
           </a>
         </div>
         <div class="bar">
           <i class="ri-instagram-fill"></i>
-          <a href="">
+          <a href="https://www.instagram.com/ux_kazim">
             <p>ux_kazim</p>
           </a>
         </div>
         <div class="bar">
-          <i class="ri-facebook-fill"></i>
-          <a href="">
-            <p>kazimahmad.22</p>
+          <i class="ri-behance-fill"></i>
+          <a href="https://www.behance.net/kazimahmad_22">
+            <p>kazimahmad_22</p>
           </a>
         </div>
         <div class="bar">
           <i class="ri-linkedin-fill"></i>
-          <a href="">
+          <a href="https://www.linkedin.com/in/kazim-ahmad-633223220/">
             <p>Kazim Ahmad</p>
           </a>
         </div>
       </div>
     </div>
-    
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
