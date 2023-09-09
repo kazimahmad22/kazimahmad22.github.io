@@ -20,6 +20,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+#portfolio {
+  width: 210px;
+}
+
 .btnPrimary {
   transition: ease-in-out 0.2s;
   padding: 7px 35px;
@@ -128,10 +132,6 @@ body {
   background-color: var(--brand);
 }
 
-#portfolio {
-  width: calc(100% - 49%);
-}
-
 #testimonial {
   width: calc(100% - 39%);
 }
@@ -146,7 +146,6 @@ body {
 }
 
 .heroSection > .left {
-  width: fit-content;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -450,10 +449,14 @@ body {
   .navbar > i {
     display: block;
   }
+  .heroSection > .left {
+    width: fit-content;
+  }
   .heroSection > .left > .underline {
     top: 32%;
-    width: 100px;
-    left: 37.5%;
+    width: 95px;
+    left: 41.5%;
+    height: 6px;
   }
   .heroSection {
     justify-content: center;
@@ -528,9 +531,6 @@ body {
     font-size: 1rem;
   }
 
-  #portfolio {
-    width: 185px;
-  }
   .portfolioSection {
     padding-left: 2%;
     padding-right: 2%;
