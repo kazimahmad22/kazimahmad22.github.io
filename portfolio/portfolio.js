@@ -9,7 +9,7 @@ for (let i = 1; i <= 17; i++) {
 }
 
 // Create objects for the "uiux" category (8 images)
-for (let i = 1; i <= 8; i++) {
+for (let i = 1; i <= 9; i++) {
   portfolioImg.push({
     src: `./assets/uiux ${i}.webp`,
     dataset: "uiux",
