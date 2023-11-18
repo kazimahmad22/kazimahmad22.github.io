@@ -4,6 +4,7 @@
   --bg: #f2efe7;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +62,7 @@ body {
   box-shadow: 4px 4px 0px black;
 }
 
-#btnContact {
+#btnContact {s
   width: 100%;
 }
 
