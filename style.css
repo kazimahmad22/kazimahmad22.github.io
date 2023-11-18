@@ -3,11 +3,13 @@
   --brand: #ffda0b;
   --bg: #f2efe7;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   overflow-x: hidden;
@@ -41,6 +43,7 @@ body {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px black;
 }
+
 .btnSecondary {
   transition: ease-in-out 0.2s;
   padding: 7px 35px;
@@ -52,6 +55,7 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
 }
+
 .btnSecondary:hover {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px black;
@@ -62,21 +66,21 @@ body {
 }
 
 .navbar {
-  padding: 0 19%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  gap: 80px;
+  width: 100vw;
   height: 100px;
 }
 
-.navbar > h1 {
+.navbar>h1 {
   font-size: 2.5rem;
   font-family: "Inter";
   font-weight: 900;
 }
 
-.navbar > .navMenu {
+.navbar>.navMenu {
   display: flex;
   gap: 32px;
   font-family: "Raleway";
@@ -84,12 +88,12 @@ body {
   font-weight: 700;
 }
 
-.navbar > .navMenu > a {
+.navbar>.navMenu>a {
   text-decoration: none;
   color: var(--text);
 }
 
-.navbar > i {
+.navbar>i {
   display: none;
   font-size: 1.5rem;
 }
@@ -103,13 +107,15 @@ body {
   align-items: start;
   transition: all 0.3s ease;
 }
-.mobNavMenu > a {
+
+.mobNavMenu>a {
   width: 100%;
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
   font-size: 1.2rem;
 }
+
 .underline2 {
   z-index: 0;
   position: absolute;
@@ -135,23 +141,28 @@ body {
 #testimonial {
   width: calc(100% - 39%);
 }
+
+.heroContainer {
+  width: 100%;
+}
+
 .heroSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0px;
+  justify-content: center;
   height: 80vh;
   width: 100%;
 }
 
-.heroSection > .left {
+.heroSection>.left {
+  width: fit-content;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.heroSection > .left > h1 {
+.heroSection>.left>h1 {
   width: 100%;
   font-family: "Work Sans";
   font-weight: 500;
@@ -159,7 +170,8 @@ body {
   line-height: 1;
   z-index: 1;
 }
-.heroSection > .left > .underline {
+
+.heroSection>.left>.underline {
   width: 132.8px;
   height: 9.6px;
   position: absolute;
@@ -169,12 +181,12 @@ body {
   z-index: 0;
 }
 
-.heroSection > .left > .btn {
+.heroSection>.left>.btn {
   display: flex;
   gap: 16px;
 }
 
-.heroSection > img {
+.heroSection>img {
   width: 336px;
 }
 
@@ -202,6 +214,7 @@ body {
   flex-direction: column;
   gap: 24px;
 }
+
 .title {
   text-align: center;
   position: relative;
@@ -210,26 +223,28 @@ body {
   align-items: center;
 }
 
-.title > h1 {
+.title>h1 {
   z-index: 1;
   font-family: "Work Sans";
   font-weight: 600;
   font-size: 2.5rem;
 }
 
-.title > p {
+.title>p {
   font-family: "Work Sans";
   font-weight: 600;
   font-size: 1.2rem;
 }
-.servicesSection > .cardContainer {
+
+.servicesSection>.cardContainer {
   padding-top: 40px;
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 30px;
   row-gap: 30px;
 }
-.servicesSection > .cardContainer > .card {
+
+.servicesSection>.cardContainer>.card {
   position: relative;
   background-color: #d9d9d9;
   display: flex;
@@ -241,18 +256,21 @@ body {
   border-radius: 10px;
   transition: ease-in-out 0.2s;
 }
-.servicesSection > .cardContainer > .card:hover {
+
+.servicesSection>.cardContainer>.card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px black;
 }
-.servicesSection > .cardContainer > .card > p {
+
+.servicesSection>.cardContainer>.card>p {
   text-align: center;
   margin-left: 15%;
   font-family: "Work Sans";
   font-weight: 500;
   font-size: 1.2rem;
 }
-.servicesSection > .cardContainer > .card > i {
+
+.servicesSection>.cardContainer>.card>i {
   font-size: 2.8rem;
   position: absolute;
   left: 11%;
@@ -268,7 +286,8 @@ body {
   flex-direction: column;
   gap: 24px;
 }
-.portfolioSection > .cardContainer {
+
+.portfolioSection>.cardContainer {
   padding-top: 40px;
 
   display: grid;
@@ -276,7 +295,8 @@ body {
   row-gap: 30px;
   column-gap: 30px;
 }
-.portfolioSection > .cardContainer > .card {
+
+.portfolioSection>.cardContainer>.card {
   transition: ease-in-out 0.2s;
   width: 320px;
   position: relative;
@@ -290,23 +310,25 @@ body {
   padding: 0 20px;
 }
 
-.portfolioSection > .cardContainer > .card:hover {
+.portfolioSection>.cardContainer>.card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px black;
 }
 
-.portfolioSection > .cardContainer > .card i {
+.portfolioSection>.cardContainer>.card i {
   top: 15%;
   position: absolute;
   font-size: 2.5rem;
 }
-.portfolioSection > .cardContainer > .card h2 {
+
+.portfolioSection>.cardContainer>.card h2 {
   margin-top: 50%;
   font-family: "Work Sans";
   font-weight: 500;
   font-size: 1.75rem;
 }
-.portfolioSection > .cardContainer > .card p {
+
+.portfolioSection>.cardContainer>.card p {
   font-family: "Work Sans";
   font-weight: 500;
   font-size: 1rem;
@@ -323,13 +345,13 @@ body {
   gap: 24px;
 }
 
-.testimonialsSection > .cardsContainer {
+.testimonialsSection>.cardsContainer {
   gap: 20px;
   display: flex;
   margin-top: 100px;
 }
 
-.testimonialsSection > .cardsContainer > .card {
+.testimonialsSection>.cardsContainer>.card {
   padding: 0 25px;
   position: relative;
   text-align: center;
@@ -343,12 +365,13 @@ body {
   height: 335px;
   transition: ease-in-out 0.2s;
 }
-.testimonialsSection > .cardsContainer > .card:hover {
+
+.testimonialsSection>.cardsContainer>.card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px black;
 }
 
-.testimonialsSection > .cardsContainer > .card > img {
+.testimonialsSection>.cardsContainer>.card>img {
   position: absolute;
   top: -22%;
   border: 6px solid var(--bg);
@@ -356,14 +379,14 @@ body {
   width: 130px;
 }
 
-.testimonialsSection > .cardsContainer > .card > p {
+.testimonialsSection>.cardsContainer>.card>p {
   font-family: "Work Sans";
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 19px;
 }
 
-.testimonialsSection > .cardsContainer > .card > h3 {
+.testimonialsSection>.cardsContainer>.card>h3 {
   z-index: 10;
   font-family: "Work Sans";
   font-weight: 600;
@@ -383,31 +406,34 @@ body {
   justify-content: space-between;
 }
 
-.footer > h1 {
+.footer>h1 {
   font-family: "Inter";
   font-weight: 900;
   font-size: 5.25rem;
 }
-.footer > .contactContainer {
+
+.footer>.contactContainer {
   display: grid;
   grid-template-columns: auto auto;
   row-gap: 20px;
   column-gap: 25px;
 }
-.footer > .contactContainer > .bar {
+
+.footer>.contactContainer>.bar {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.footer > .contactContainer > .bar > i {
+.footer>.contactContainer>.bar>i {
   color: var(--text);
   font-size: 1.5rem;
   background-color: var(--bg);
   border-radius: 100%;
   padding: 6px;
 }
-.footer > .contactContainer > .bar > a {
+
+.footer>.contactContainer>.bar>a {
   color: var(--bg);
   text-decoration: none;
   font-family: "Work Sans";
@@ -422,10 +448,12 @@ body {
     width: 1600px;
     margin: 0 auto;
   }
+
   .heroContainer {
     width: 1600px;
     margin: 0 auto;
   }
+
   .footer {
     height: fit-content;
     padding: 100px 0;
@@ -436,8 +464,9 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .navbar > .navMenu,
-  .navbar > button {
+
+  .navbar>.navMenu,
+  .navbar>button {
     display: none;
   }
 
@@ -445,18 +474,21 @@ body {
     padding: 0 12%;
   }
 
-  .navbar > i {
+  .navbar>i {
     display: block;
   }
-  .heroSection > .left {
+
+  .heroSection>.left {
     width: fit-content;
   }
-  .heroSection > .left > .underline {
+
+  .heroSection>.left>.underline {
     top: 32%;
     width: 95px;
     left: 41.5%;
     height: 6px;
   }
+
   .heroSection {
     justify-content: center;
     gap: 20px;
@@ -469,7 +501,7 @@ body {
     width: 160px;
   }
 
-  .heroSection > img {
+  .heroSection>img {
     width: 50%;
   }
 
@@ -480,10 +512,12 @@ body {
   .btnPrimary {
     font-size: 1.1rem;
   }
-  .heroSection > .left {
+
+  .heroSection>.left {
     align-items: center;
   }
-  .heroSection > .left > h1 {
+
+  .heroSection>.left>h1 {
     text-align: center;
     width: 100%;
     font-size: 2rem;
@@ -495,38 +529,43 @@ body {
     width: 100%;
     font-size: 0.65rem;
   }
-  .skillBar > img {
+
+  .skillBar>img {
     width: 13px;
   }
 
   .servicesSection {
     padding: 19% 2%;
   }
+
   .title {
     width: 100%;
     padding: 0;
   }
-  .title > h1 {
+
+  .title>h1 {
     font-size: 2.2rem;
   }
-  .title > p {
+
+  .title>p {
     font-size: 1.1rem;
   }
 
-  .servicesSection > .cardContainer {
+  .servicesSection>.cardContainer {
     grid-template-columns: auto auto;
     column-gap: 10px;
   }
 
-  .servicesSection > .cardContainer > .card {
+  .servicesSection>.cardContainer>.card {
     width: calc(340px * 0.6);
     height: calc(100px * 0.6);
   }
 
-  .servicesSection > .cardContainer > .card i {
+  .servicesSection>.cardContainer>.card i {
     font-size: 1.5rem;
   }
-  .servicesSection > .cardContainer > .card > p {
+
+  .servicesSection>.cardContainer>.card>p {
     font-size: 1rem;
   }
 
@@ -535,26 +574,29 @@ body {
     padding-right: 2%;
   }
 
-  .portfolioSection > .cardContainer {
+  .portfolioSection>.cardContainer {
     grid-template-columns: auto;
   }
-  .portfolioSection > .cardContainer > .card {
+
+  .portfolioSection>.cardContainer>.card {
     scale: 0.9;
   }
 
   #testimonial {
     width: 230px;
   }
+
   .testimonialsSection {
     padding-left: 2%;
     padding-right: 2%;
   }
 
-  .testimonialsSection > .cardsContainer {
+  .testimonialsSection>.cardsContainer {
     gap: 70px;
     flex-direction: column;
   }
-  .testimonialsSection > .cardsContainer > .card {
+
+  .testimonialsSection>.cardsContainer>.card {
     scale: 0.9;
   }
 
@@ -567,7 +609,7 @@ body {
     justify-content: center;
   }
 
-  .footer > .contactContainer {
+  .footer>.contactContainer {
     scale: 0.9;
     display: flex;
     flex-direction: column;
