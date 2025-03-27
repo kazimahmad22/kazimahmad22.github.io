@@ -17,7 +17,6 @@
       gtag("config", "G-37PHPV1NXW");
     </script>
     <meta charset="UTF-8" />
-    <!-- <link rel="stylesheet" href="./style.min.css" /> -->
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,9 +62,6 @@
           <a href="#portfolioSection">
             <p>Portfolio</p>
           </a>
-          <!--           <a href="https://kazimahmad22.github.io/projects/">
-            <p>Projects</p>
-          </a> -->
           <a href="#testimonialsSection">
             <p>Testimonials</p>
           </a>
@@ -89,16 +85,23 @@
       <a href="#testimonialsSection">
         <p>Testimonials</p>
       </a>
+      <a href="#contact">
+        <p>Contact</p>
+      </a>
     </div>
     <div class="heroContainer">
       <div class="heroSection">
         <div class="left">
-          <h1>
-            HEY, I’M KAZIM, A<br />
-            CREATIVE UI/UX DESIGNER <br />
-            AND DEVELOPER.
-          </h1>
-          <div class="underline"></div>
+          <div class="hero-text">
+            <h1 class="hero-title">
+              HEY, I'M KAZIM,<br />
+              <span
+                >A CREATIVE UI/UX DESIGNER<br />
+                AND DEVELOPER.</span
+              >
+            </h1>
+            <div class="underline"></div>
+          </div>
           <div class="btn">
             <button
               type="button"
@@ -116,170 +119,192 @@
             </button>
           </div>
         </div>
-        <img src="./assets/profile picture.webp" alt="Profile Picture" />
+        <div class="right">
+          <img src="./assets/profile picture.webp" alt="Profile Picture" />
+        </div>
       </div>
     </div>
     <div class="skillBar">
-      <img src="./assets/star.svg" alt="" />
-      <p>ui/ux</p>
-      <img src="./assets/star.svg" alt="" />
-      <p>Development</p>
-      <img src="./assets/star.svg" alt="" />
-      <p>Product Design</p>
-      <img src="./assets/star.svg" alt="" />
-      <p>Social Media Design</p>
-      <img src="./assets/star.svg" alt="" />
-      <p>Branding</p>
-    </div>
-    <div class="servicesSection">
-      <div class="title">
-        <div class="underline2"></div>
-        <h1>Services.</h1>
-        <p>We're pleased to share the services we offer.</p>
+      <div class="skillBar-content">
+        <img src="./assets/star.svg" alt="" />
+        <p>ui/ux</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Development</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Product Design</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Social Media Design</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Branding</p>
       </div>
-      <div class="cardContainer">
-        <div class="card">
-          <i class="ri-terminal-window-fill"></i>
-          <p>UI/UX Designing</p>
+      <div class="skillBar-content" aria-hidden="true">
+        <img src="./assets/star.svg" alt="" />
+        <p>ui/ux</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Development</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Product Design</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Social Media Design</p>
+        <img src="./assets/star.svg" alt="" />
+        <p>Branding</p>
+      </div>
+    </div>
+    <div id="servicesSection" class="servicesSection">
+      <div class="container">
+        <div class="title">
+          <div class="underline2"></div>
+          <h1>Services.</h1>
+          <p>We're pleased to share the services we offer.</p>
         </div>
-        <div class="card">
-          <i class="ri-apps-fill"></i>
-          <p>Application UI/UX</p>
-        </div>
-        <div class="card">
-          <i class="ri-html5-fill"></i>
-          <p>Web Development</p>
-        </div>
-        <div class="card">
-          <i class="ri-shapes-fill"></i>
-          <p>Graphic Designing</p>
-        </div>
-        <div class="card">
-          <i class="ri-box-2-fill"></i>
-          <p>Product Designing</p>
-        </div>
-        <div class="card">
-          <i class="ri-article-fill"></i>
-          <p>Social Media Posts</p>
+        <div class="cardContainer">
+          <div class="card">
+            <i class="ri-terminal-window-fill"></i>
+            <p>UI/UX Designing</p>
+          </div>
+          <div class="card">
+            <i class="ri-apps-fill"></i>
+            <p>Application UI/UX</p>
+          </div>
+          <div class="card">
+            <i class="ri-html5-fill"></i>
+            <p>Web Development</p>
+          </div>
+          <div class="card">
+            <i class="ri-shapes-fill"></i>
+            <p>Graphic Designing</p>
+          </div>
+          <div class="card">
+            <i class="ri-box-2-fill"></i>
+            <p>Product Designing</p>
+          </div>
+          <div class="card">
+            <i class="ri-article-fill"></i>
+            <p>Social Media Posts</p>
+          </div>
         </div>
       </div>
     </div>
     <div id="portfolioSection" class="portfolioSection">
-      <div class="title">
-        <div id="portfolio" class="underline2"></div>
-        <h1>Portfolios.</h1>
-        <p>I encourage you to check out my portfolios here.</p>
-      </div>
-      <div class="cardContainer">
-        <div class="card">
-          <i class="fa-brands fa-figma"></i>
-          <h2>UI/UX Designing.</h2>
-          <p>
-            We specialize in creating captivating UI/UX designs. Our expertise
-            extends to various projects, including landing pages, e-commerce
-            sites, portfolios, and business websites, all tailored to meet your
-            specific needs.
-          </p>
+      <div class="container">
+        <div class="title">
+          <div id="portfolio" class="underline2"></div>
+          <h1>Portfolios.</h1>
+          <p>I encourage you to check out my portfolios here.</p>
         </div>
-        <div class="card">
-          <i class="ri-instance-line"></i>
-          <h2>Graphic Designing.</h2>
-          <p>
-            We offer high-quality Graphic Assets for various projects, including
-            social media posts, logos, business cards, posters, YouTube and blog
-            thumbnails, product labels, and more, tailored to your specific
-            needs.
-          </p>
-        </div>
-        <div class="card">
-          <i class="ri-terminal-box-line"></i>
-          <h2>Web Development.</h2>
-          <p>
-            We provide comprehensive web development services, including
-            business landing pages and product-related site development. Our
-            expertise covers various project types, ensuring a tailored solution
-            for your needs.
-          </p>
-        </div>
-        <div class="card">
-          <i class="ri-instagram-line"></i>
-          <h2>Social Media Post Designing.</h2>
-          <p>
-            Elevate your online presence with our captivating social media post
-            design services. We craft engaging visuals that leave a lasting
-            impression, helping you stand out in the digital world.
-          </p>
-        </div>
-        <div class="card">
-          <i class="ri-smartphone-line"></i>
-          <h2>Mobile App UI/UX.</h2>
-          <p>
-            We specialize in web design and development, as well as professional
-            mobile app UI/UX design services. If you seek expertly crafted
-            mobile app layouts and pages, we are well-equipped to handle your
-            project.
-          </p>
-        </div>
-        <div class="card">
-          <i class="ri-gallery-line"></i>
-          <h2>Gallery.</h2>
-          <p>
-            Explore my portfolio gallery to discover a showcase of my work and
-            creativity. Get inspired and envision how I can bring your projects
-            to life.
-          </p>
-          <a target="_blank" href="https://www.behance.net/kazimahmad_22">
-            <button type="button" id="btnContact" class="btnSecondary">
-              Gallery
-            </button>
-          </a>
+        <div class="cardContainer">
+          <div class="card">
+            <i class="fa-brands fa-figma"></i>
+            <h2>UI/UX Designing.</h2>
+            <p>
+              We specialize in creating captivating UI/UX designs. Our expertise
+              extends to various projects, including landing pages, e-commerce
+              sites, portfolios, and business websites, all tailored to meet
+              your specific needs.
+            </p>
+          </div>
+          <div class="card">
+            <i class="ri-instance-line"></i>
+            <h2>Graphic Designing.</h2>
+            <p>
+              We offer high-quality Graphic Assets for various projects,
+              including social media posts, logos, business cards, posters,
+              YouTube and blog thumbnails, product labels, and more, tailored to
+              your specific needs.
+            </p>
+          </div>
+          <div class="card">
+            <i class="ri-terminal-box-line"></i>
+            <h2>Web Development.</h2>
+            <p>
+              We provide comprehensive web development services, including
+              business landing pages and product-related site development. Our
+              expertise covers various project types, ensuring a tailored
+              solution for your needs.
+            </p>
+          </div>
+          <div class="card">
+            <i class="ri-instagram-line"></i>
+            <h2>Social Media Post Designing.</h2>
+            <p>
+              Elevate your online presence with our captivating social media
+              post design services. We craft engaging visuals that leave a
+              lasting impression, helping you stand out in the digital world.
+            </p>
+          </div>
+          <div class="card">
+            <i class="ri-smartphone-line"></i>
+            <h2>Mobile App UI/UX.</h2>
+            <p>
+              We specialize in web design and development, as well as
+              professional mobile app UI/UX design services. If you seek
+              expertly crafted mobile app layouts and pages, we are
+              well-equipped to handle your project.
+            </p>
+          </div>
+          <div class="card">
+            <i class="ri-gallery-line"></i>
+            <h2>Gallery.</h2>
+            <p>
+              Explore my portfolio gallery to discover a showcase of my work and
+              creativity. Get inspired and envision how I can bring your
+              projects to life.
+            </p>
+            <a target="_blank" href="https://www.behance.net/kazimahmad_22">
+              <button type="button" id="btnContact" class="btnSecondary">
+                Gallery
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
     <div id="testimonialsSection" class="testimonialsSection">
-      <div class="title">
-        <div id="testimonial" class="underline2"></div>
-        <h1>Testimonials.</h1>
-        <p>Here are some testimonials from our clients.</p>
-      </div>
-      <div class="cardsContainer">
-        <div class="card">
-          <img src="./assets/DP.webp" alt="" />
-          <p>
-            "This young man- is a great designer. Second time I am working with
-            him. He will be creative with the brief. I am very pleased with the
-            outcome. He also works very hard and listens to clients- I have been
-            picky at time and he made the appropriate amendments. All the best
-            kazim."
-          </p>
-          <h3>
-            <div class="underline3"></div>
-            Vaseem Aziz.
-          </h3>
+      <div class="container">
+        <div class="title">
+          <div id="testimonial" class="underline2"></div>
+          <h1>Testimonials.</h1>
+          <p>Here are some testimonials from our clients.</p>
         </div>
-        <div class="card">
-          <img src="./assets/DP.webp" alt="" />
-          <p>
-            "Very Hard worked. Listens and understands clients needs. Uses his
-            own initiative to get the job done. Well done."
-          </p>
-          <h3>
-            <div class="underline3"></div>
-            Gaurav Pundir.
-          </h3>
-        </div>
-        <div class="card">
-          <img src="./assets/DP.webp" alt="" />
-          <p>
-            "Kazim was patient and incorporated all the requests with multiple
-            back and forth. I appreciated the willingness to learn new things
-            and reasonably quickly as well. He was always responsive. I will be
-            working with him on future projects! Highly recommend."
-          </p>
-          <h3>
-            <div class="underline3"></div>
-            Anonymous Client.
-          </h3>
+        <div class="cardsContainer">
+          <div class="card">
+            <img src="./assets/DP.webp" alt="" />
+            <p>
+              "This young man- is a great designer. Second time I am working
+              with him. He will be creative with the brief. I am very pleased
+              with the outcome. He also works very hard and listens to clients-
+              I have been picky at time and he made the appropriate amendments.
+              All the best kazim."
+            </p>
+            <h3>
+              <div class="underline3"></div>
+              Vaseem Aziz.
+            </h3>
+          </div>
+          <div class="card">
+            <img src="./assets/DP.webp" alt="" />
+            <p>
+              "Very Hard worked. Listens and understands clients needs. Uses his
+              own initiative to get the job done. Well done."
+            </p>
+            <h3>
+              <div class="underline3"></div>
+              Gaurav Pundir.
+            </h3>
+          </div>
+          <div class="card">
+            <img src="./assets/DP.webp" alt="" />
+            <p>
+              "Kazim was patient and incorporated all the requests with multiple
+              back and forth. I appreciated the willingness to learn new things
+              and reasonably quickly as well. He was always responsive. I will
+              be working with him on future projects! Highly recommend."
+            </p>
+            <h3>
+              <div class="underline3"></div>
+              Anonymous Client.
+            </h3>
+          </div>
         </div>
       </div>
     </div>

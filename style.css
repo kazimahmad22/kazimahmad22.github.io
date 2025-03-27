@@ -24,7 +24,7 @@ body {
 }
 
 #portfolio {
-  width: 210px;
+  width: 120px;
 }
 
 .btnPrimary {
@@ -68,7 +68,10 @@ body {
 }
 
 .navContainer {
-  max-width: 930px;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .navbar {
@@ -77,6 +80,7 @@ body {
   justify-content: space-between;
   align-self: center;
   height: 100px;
+  width: 100%;
 }
 
 .navbar>h1 {
@@ -110,13 +114,17 @@ body {
 }
 
 .mobNavMenu {
-  background-color: #b4b4b4;
-  padding: 5% 12%;
+  background-color: var(--bg);
+  padding: 15px;
   display: none;
   flex-direction: column;
-  gap: 20px;
-  align-items: start;
-  transition: all 0.3s ease;
+  gap: 10px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mobNavMenu>a {
@@ -125,83 +133,95 @@ body {
   color: var(--text);
   font-weight: 600;
   font-size: 1.2rem;
+  padding: 12px 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.underline2 {
-  z-index: 0;
-  position: absolute;
-  width: calc(100% - 58%);
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  height: 9.6px;
+.mobNavMenu>a:hover {
   background-color: var(--brand);
 }
 
-.underline3 {
-  /* z-index: -1; */
-  position: absolute;
-  width: 105%;
-  z-index: -1;
-  bottom: 1.2px;
-  left: -3px;
-  height: 9.6px;
-  background-color: var(--brand);
+.underline2,
+.underline3,
+.heroSection>.left>.hero-text>.underline {
+  display: none;
 }
 
 #testimonial {
-  width: calc(100% - 39%);
+  width: 170px;
 }
 
 .heroContainer {
   width: 100%;
-}
-
-.heroSection {
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  padding: 40px 20px;
+}
+
+.heroSection {
+  max-width: 1240px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .heroSection>.left {
-  width: fit-content;
-  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
 }
 
-.heroSection>.left>h1 {
-  width: 100%;
+.hero-text {
+  position: relative;
+  max-width: 700px;
+}
+
+.hero-title {
   font-family: "Work Sans";
-  font-weight: 500;
-  font-size: 2.8rem;
-  line-height: 1;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   z-index: 1;
 }
 
-.heroSection>.left>.underline {
-  width: 132.8px;
-  height: 9.6px;
-  position: absolute;
-  top: 37%;
-  left: 38.1%;
-  background-color: var(--brand);
-  z-index: 0;
+.hero-title span {
+  color: var(--text);
+  opacity: 0.85;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  display: block;
+  margin-top: 8px;
 }
 
 .heroSection>.left>.btn {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
-.heroSection>img {
-  width: 336px;
+.heroSection>.right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.skillBar {
+.heroSection>.right>img {
+  width: 100%;
+  max-width: 336px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* .skillBar {
   color: white;
   text-transform: uppercase;
   font-family: "Work Sans";
@@ -214,16 +234,65 @@ body {
   height: 72px;
   background-color: #222;
   padding: 0 5%;
+} */
+
+.skillBar {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 1.2rem;
+  height: 72px;
+  background-color: #222;
+  padding: 0 5%;
+  position: relative;
+}
+
+.skillBar-content {
+  display: flex;
+  align-items: center;
+  animation: scroll 25s linear infinite;
+  padding-right: 50px;
+  gap: 30px;
+}
+
+.skillBar-content img {
+  width: 20px;
+  height: 20px;
+}
+
+.skillBar-content p {
+  font-size: 1.2rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .servicesSection {
-  padding: 110px 19%;
+  padding: 110px 0 0 0;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  gap: 24px;
+  gap: 70px;
+}
+
+.servicesSection>.container {
+  max-width: 1240px;
+  width: 100%;
+  padding: 0;
 }
 
 .title {
@@ -238,7 +307,7 @@ body {
   z-index: 1;
   font-family: "Work Sans";
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .title>p {
@@ -247,35 +316,34 @@ body {
   font-size: 1.2rem;
 }
 
-.servicesSection>.cardContainer {
+.servicesSection>.container>.cardContainer {
   padding-top: 40px;
   display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 30px;
-  row-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
 }
 
-.servicesSection>.cardContainer>.card {
+.servicesSection>.container>.cardContainer>.card {
   position: relative;
-  /* background-color: #d9d9d9; */
   border: 3px solid var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 24px;
-  width: 320px;
+  width: 100%;
   height: 100px;
   border-radius: 10px;
   transition: ease-in-out 0.2s;
   cursor: pointer;
 }
 
-.servicesSection>.cardContainer>.card:hover {
+.servicesSection>.container>.cardContainer>.card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0px black;
 }
 
-.servicesSection>.cardContainer>.card>p {
+.servicesSection>.container>.cardContainer>.card>p {
   text-align: center;
   margin-left: 15%;
   font-family: "Work Sans";
@@ -283,90 +351,105 @@ body {
   font-size: 1.2rem;
 }
 
-.servicesSection>.cardContainer>.card>i {
+.servicesSection>.container>.cardContainer>.card>i {
   font-size: 2.8rem;
   position: absolute;
   left: 11%;
 }
 
 .portfolioSection {
-  padding: 0 19%;
-  padding-bottom: 110px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.portfolioSection>.cardContainer {
-  padding-top: 40px;
-
-  display: grid;
-  grid-template-columns: auto auto auto;
-  row-gap: 30px;
-  column-gap: 30px;
-}
-
-.portfolioSection>.cardContainer>.card {
-  cursor: pointer;
-  transition: ease-in-out 0.2s;
-  width: 320px;
-  position: relative;
-  height: 425px;
-  background-color: transparent;
-  border: 3px solid var(--text);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 0 20px;
-}
-
-.portfolioSection>.cardContainer>.card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 4px 4px 0px black;
-}
-
-.portfolioSection>.cardContainer>.card i {
-  top: 15%;
-  position: absolute;
-  font-size: 2.5rem;
-}
-
-.portfolioSection>.cardContainer>.card h2 {
-  margin-top: 50%;
-  font-family: "Work Sans";
-  font-weight: 500;
-  font-size: 1.75rem;
-}
-
-.portfolioSection>.cardContainer>.card p {
-  font-family: "Work Sans";
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.testimonialsSection {
-  padding: 0 19%;
-  padding-bottom: 110px;
+  padding: 110px 0 0 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 24px;
+  gap: 70px;
 }
 
-.testimonialsSection>.cardsContainer {
-  gap: 20px;
+.portfolioSection>.container {
+  max-width: 1240px;
+  width: 100%;
+  padding: 0;
+}
+
+.portfolioSection>.container>.cardContainer {
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.portfolioSection>.container>.cardContainer>.card {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  width: 100%;
+  position: relative;
+  height: auto;
+  min-height: 425px;
+  background-color: transparent;
+  border: 3px solid var(--text);
+  border-radius: 10px;
   display: flex;
-  margin-top: 100px;
+  flex-direction: column;
+  padding: 30px;
 }
 
-.testimonialsSection>.cardsContainer>.card {
-  padding: 0 25px;
+.portfolioSection>.container>.cardContainer>.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0px black;
+}
+
+.portfolioSection>.container>.cardContainer>.card i {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.portfolioSection>.container>.cardContainer>.card h2 {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+.portfolioSection>.container>.cardContainer>.card p {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.portfolioSection>.container>.cardContainer>.card button {
+  margin-top: auto;
+}
+
+.testimonialsSection {
+  padding: 110px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.testimonialsSection>.container {
+  max-width: 1240px;
+  width: 100%;
+  padding: 0;
+}
+
+.testimonialsSection>.container>.cardsContainer {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  margin-top: 120px;
+}
+
+.testimonialsSection>.container>.cardsContainer>.card {
+  padding: 30px 25px;
   position: relative;
   text-align: center;
   display: flex;
@@ -375,59 +458,52 @@ body {
   justify-content: center;
   background-color: #d9d9d9;
   border-radius: 10px;
-  width: 333px;
-  height: 335px;
+  width: 100%;
+  height: auto;
+  min-height: 335px;
   cursor: pointer;
   transition: ease-in-out 0.2s;
 }
 
-/* .testimonialsSection > .cardsContainer > .card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 4px 4px 0px black;
-} */
-
-.testimonialsSection>.cardsContainer>.card>img {
+.testimonialsSection>.container>.cardsContainer>.card>img {
   position: absolute;
-  top: -22%;
+  top: -65px;
   border: 6px solid var(--bg);
   border-radius: 100%;
   width: 130px;
 }
 
-.testimonialsSection>.cardsContainer>.card>p {
+.testimonialsSection>.container>.cardsContainer>.card>p {
   font-family: "Work Sans";
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 19px;
 }
 
-.testimonialsSection>.cardsContainer>.card>h3 {
+.testimonialsSection>.container>.cardsContainer>.card>h3 {
   z-index: 10;
   font-family: "Work Sans";
   font-weight: 600;
   font-size: 1.35rem;
-  position: absolute;
-  bottom: 25px;
-}
-
-.footerContainer {
-  width: 100vw;
-  background-color: var(--text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  margin-top: 30px;
 }
 
 .footer {
-  background-color: var(--text);
-  color: var(--bg);
-  height: 40%;
-  width: 1020px;
-  padding: 0;
-  padding: 100px 0;
+  max-width: 1240px;
+  width: 100%;
+  padding: 100px 20px;
+  margin: 0 auto;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  display: flex;
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+.footerContainer {
+  width: 100%;
+  background-color: var(--text);
 }
 
 .footer>h1 {
@@ -491,155 +567,232 @@ body {
   } */
 }
 
+@media screen and (max-width: 768px) {
+  .heroContainer {
+    height: 500px;
+    padding: 50px 15px;
+  }
+
+  .heroSection {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .heroSection>.right {
+    flex: 1;
+  }
+
+  .heroSection>.right>img {
+    width: 75%;
+    max-width: 280px;
+  }
+
+  .heroSection>.left {
+    align-items: center;
+    gap: 25px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 2.8rem);
+  }
+
+  .hero-title span {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    margin-top: 5px;
+  }
+
+  .heroSection>.left>.btn {
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 7px 25px;
+    font-size: 1rem;
+  }
+
+  .servicesSection,
+  .portfolioSection {
+    padding: 80px 0 0 0;
+    gap: 50px;
+  }
+
+  .testimonialsSection {
+    padding: 80px 0 80px 0;
+    gap: 50px;
+  }
+
+  .servicesSection>.container,
+  .portfolioSection>.container,
+  .testimonialsSection>.container {
+    padding: 0 10px;
+  }
+
+  .servicesSection>.container>.cardContainer,
+  .portfolioSection>.container>.cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .testimonialsSection>.container>.cardsContainer {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .testimonialsSection>.container>.cardsContainer>.card {
+    width: 100%;
+    min-height: 300px;
+    padding-top: 60px;
+  }
+
+  .testimonialsSection>.container>.cardsContainer>.card>h3 {
+    position: relative;
+    bottom: auto;
+    margin-top: 20px;
+  }
+
+  .servicesSection>.container>.cardContainer>.card {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer>.contactContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  .heroContainer {
+    height: 450px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4.5vw, 2.2rem);
+  }
+
+  .hero-title span {
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+  }
+
+  .heroSection>.right>img {
+    width: 65%;
+    max-width: 240px;
+  }
+
+  .title>h1 {
+    font-size: clamp(1.8rem, 4vw, 2rem);
+  }
+
+  .heroSection>.left>.btn {
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+  }
 
   .navbar>.navMenu,
   .navbar>button {
     display: none;
   }
 
+  .navContainer {
+    padding: 0 15px;
+  }
+
   .navbar {
-    padding: 0 12%;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .navbar>h1 {
+    font-size: 2rem;
   }
 
   .navbar>i {
     display: block;
-  }
-
-  .heroSection>.left {
-    width: fit-content;
-  }
-
-  .heroSection>.left>.underline {
-    top: 32%;
-    width: 95px;
-    left: 41.5%;
-    height: 6px;
-  }
-
-  .heroSection {
-    justify-content: center;
-    gap: 20px;
-    flex-direction: column-reverse;
-    padding: 0;
-    text-align: center;
-  }
-
-  .underline2 {
-    width: 160px;
-  }
-
-  .heroSection>img {
-    width: 50%;
-  }
-
-  .heroSection .btnSecondary {
-    display: none;
-  }
-
-  .btnPrimary {
-    font-size: 1.1rem;
-  }
-
-  .heroSection>.left {
-    align-items: center;
-  }
-
-  .heroSection>.left>h1 {
-    text-align: center;
-    width: 100%;
-    font-size: 2rem;
-  }
-
-  .skillBar {
-    height: 50px;
-    padding: 0;
-    width: 100%;
-    font-size: 0.65rem;
-  }
-
-  .skillBar>img {
-    width: 13px;
-  }
-
-  .servicesSection {
-    padding: 19% 2%;
-  }
-
-  .title {
-    width: 100%;
-    padding: 0;
-  }
-
-  .title>h1 {
-    font-size: 2.2rem;
-  }
-
-  .title>p {
-    font-size: 1.1rem;
-  }
-
-  .servicesSection>.cardContainer {
-    grid-template-columns: auto auto;
-    column-gap: 10px;
-  }
-
-  .servicesSection>.cardContainer>.card {
-    width: calc(340px * 0.6);
-    height: calc(100px * 0.6);
-  }
-
-  .servicesSection>.cardContainer>.card i {
     font-size: 1.5rem;
+    cursor: pointer;
   }
 
-  .servicesSection>.cardContainer>.card>p {
-    font-size: 1rem;
-  }
-
-  .portfolioSection {
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-
-  .portfolioSection>.cardContainer {
-    grid-template-columns: auto;
-  }
-
-  .portfolioSection>.cardContainer>.card {
-    scale: 0.9;
-  }
-
-  #testimonial {
-    width: 230px;
+  .servicesSection>.container,
+  .portfolioSection>.container,
+  .testimonialsSection>.container {
+    padding: 0 10px;
   }
 
   .testimonialsSection {
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-
-  .testimonialsSection>.cardsContainer {
-    gap: 70px;
-    flex-direction: column;
-  }
-
-  .testimonialsSection>.cardsContainer>.card {
-    scale: 0.9;
+    padding: 80px 0 80px 0;
   }
 
   .footer {
-    gap: 35px;
-    height: fit-content;
-    flex-direction: column;
-    padding: 40px 0;
-    align-items: center;
-    justify-content: center;
+    padding: 40px 10px;
   }
 
-  .footer>.contactContainer {
-    scale: 0.9;
-    display: flex;
+  .footer>h1 {
+    font-size: 4rem;
+  }
+
+  .servicesSection>.container,
+  .portfolioSection>.container,
+  .testimonialsSection>.container {
+    padding: 0 10px;
+  }
+
+  .servicesSection>.container>.cardContainer,
+  .portfolioSection>.container>.cardContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .navContainer {
+    padding: 0 15px;
+  }
+
+  .servicesSection,
+  .portfolioSection {
+    padding: 60px 0 0 0;
+  }
+
+  .testimonialsSection {
+    padding: 60px 0 60px 0;
+  }
+
+  .servicesSection>.container,
+  .portfolioSection>.container,
+  .testimonialsSection>.container {
+    padding: 0 10px;
+  }
+
+  .servicesSection>.container>.cardContainer,
+  .portfolioSection>.container>.cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .testimonialsSection>.container>.cardsContainer {
     flex-direction: column;
+    gap: 60px;
+  }
+
+  .testimonialsSection>.container>.cardsContainer>.card {
+    width: 100%;
   }
 }
