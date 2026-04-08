@@ -600,8 +600,7 @@ body.light-mode .contact-actions .fa-github {
 }
 
 body.light-mode .contact-actions .fa-linkedin {
-  color: #ffffff !important;
-  /* Match text color on primary button */
+  color: #18181b !important;
 }
 
 /* Ensure tool logos keep their original colors */
