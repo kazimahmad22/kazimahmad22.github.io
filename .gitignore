@@ -1,0 +1,36 @@
+# Agent Context & Logs
+.agents/
+.gemini/
+.claude/
+.opencode/
+.codex/
+logs/
+*.log
+task.md
+implementation_plan.md
+walkthrough.md
+
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build & Tmp
+dist/
+build/
+tmp/
+tmp_style.css
+
+# Old Portfolio Ref (Optional - keep if you want to push, ignore if local only)
+# old_portfolio/
+
+# AI and Audit Files
+skills/
+Audit Reports/
+gemini.md

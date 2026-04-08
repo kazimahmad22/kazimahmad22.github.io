@@ -1,352 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="p:domain_verify" content="ed9f93c03544f94304c6d15b1a139dc0" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-37PHPV1NXW"
-    ></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazim Ahmad | High-Performance WordPress Developer</title>
+    <link rel="icon" type="image/webp" href="./assets/profile picture.webp">
+    <meta name="description" content="I help businesses build high-performance WordPress websites with Elementor that convert. Fast, SEO-ready, and conversion-focused.">
+    <link rel="canonical" href="https://kazimahmad22.github.io/">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kazim Ahmad",
+      "url": "https://kazimahmad22.github.io/",
+      "jobTitle": "High-Performance WordPress Developer",
+      "sameAs": [
+        "https://www.linkedin.com/in/kazim-ahmad-633223220",
+        "https://github.com/kazimahmad22",
+        "http://instagram.com/kazimahmad_22/"
+      ]
+    }
+    </script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kazimahmad22.github.io/">
+    <meta property="og:title" content="Kazim Ahmad | High-Performance WordPress Developer">
+    <meta property="og:description" content="I help businesses build high-performance WordPress websites with Elementor that convert. Fast, SEO-ready, and conversion-focused.">
+    <meta property="og:image" content="https://kazimahmad22.github.io/assets/profile%20picture.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kazimahmad22.github.io/">
+    <meta property="twitter:title" content="Kazim Ahmad | High-Performance WordPress Developer">
+    <meta property="twitter:description" content="I help businesses build high-performance WordPress websites with Elementor that convert. Fast, SEO-ready, and conversion-focused.">
+    <meta property="twitter:image" content="https://kazimahmad22.github.io/assets/profile%20picture.webp">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-37PHPV1NXW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-37PHPV1NXW");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-37PHPV1NXW');
     </script>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
-      integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-    <script type="module" src="./hero-animation.js"></script>
-    <script type="module" src="./section-animations.js"></script>
+</head>
+<body class="antialiased">
 
-    <title>Kazim Ahmad</title>
-  </head>
-  <body>
-    <canvas id="heroCanvas"></canvas>
-    <div class="navContainer">
-      <div id="home" class="navbar">
-        <h1>KA.</h1>
-        <div class="navMenu">
-          <a href="#home">
-            <p>Home</p>
-          </a>
-          <a href="#servicesSection">
-            <p>Services</p>
-          </a>
-          <a href="#portfolioSection">
-            <p>Portfolio</p>
-          </a>
-          <a href="#testimonialsSection">
-            <p>Testimonials</p>
-          </a>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                 <div class="header-left">
+                    <a href="#" class="logo-btn">
+                        <span class="header-logo-text">KA.</span>
+                    </a>
+                 </div>
+
+                 <nav class="nav">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#testimonials" class="nav-link">Reviews</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                 </nav>
+
+                <div class="header-right">
+                    <button class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="menuToggle" class="menu-toggle-btn" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <a id="btn" href="#contact">
-          <button class="btnPrimary">Let's Talk</button>
-        </a>
-        <i class="mobMenuIcon fa-solid fa-bars"></i>
-      </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-visual">
+                    <img src="./assets/profile picture.webp" alt="Kazim Ahmad" class="hero-avatar">
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi, I'm Kazim — <span class="text-highlight">High-Performance WordPress Developer.</span></h1>
+                    <p class="hero-subtitle">Helping businesses turn slow, outdated sites into fast, SEO-ready, conversion-focused experiences with <span class="tech-badge"><i class="fab fa-wordpress"></i> WordPress</span> and <span class="tech-badge"><i class="fab fa-elementor"></i> Elementor</span>.</p>
+                    
+                    <div class="hero-ctas">
+                        <a href="https://drive.google.com/file/d/197BPtk3eGa-qynKx6C_Vy-Nmn9pDhew-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-alt"></i> View Resume</a>
+                        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+                    </div>
+
+                     <div class="social-links-hero">
+                          <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                          <a href="https://github.com/kazimahmad22" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                          <a href="http://instagram.com/kazimahmad_22/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                          <a href="mailto:kazimahmad.business@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Featured Section (Mimicking 'Experience' layout) -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">About</p>
+                    <h2 class="section-title">Who I Am</h2>
+                </div>
+                <div class="about-grid">
+                     <div class="about-text">
+                        <p>You need a partner, not just a developer. I specialize in building WordPress ecosystems that drive real business growth—optimizing every pixel for speed, SEO, and sales. My goal is simple: to make your website work as hard as you do.</p>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">Expertise</p>
+                    <h2 class="section-title">What I Do</h2>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="service-info">
+                            <h3>High-Converting Website Development</h3>
+                            <p>Turn your website into your best salesperson. I build high-performance, custom WordPress sites designed not just to look good, but to capture leads and drive revenue from day one.</p>
+                             <ul class="service-list">
+                                <li>Custom Design</li>
+                                <li>Responsive Layout</li>
+                                <li>Fast Loading</li>
+                                <li>SEO Structure</li>
+                                <li>Lead-Focused Pages</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <div class="service-info">
+                            <h3>Strategic Website Redesign</h3>
+                            <p>Is your website costing you customers? I transform outdated, clunky sites into modern, trust-building experiences that reflect your brand's true value and keep visitors engaged.</p>
+                             <ul class="service-list">
+                                <li>Modern UI</li>
+                                <li>UX Improvements</li>
+                                <li>Clear Messaging</li>
+                                <li>Conversion Layout</li>
+                                <li>Mobile Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="service-info">
+                            <h3>Website Speed Optimization</h3>
+                            <p>Speed sells. I optimize every line of code and asset to ensure your site loads instantly, boosting your Google rankings and keeping impatient visitors from bouncing.</p>
+                             <ul class="service-list">
+                                <li>Core Web Vitals</li>
+                                <li>Image Optimization</li>
+                                <li>Code Cleanup</li>
+                                <li>Caching Setup</li>
+                                <li>Performance Tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="service-info">
+                            <h3>Website Conversion Optimization</h3>
+                            <p>Traffic is useless without action. I analyze user behavior and refine your site's structure, calls-to-action, and flow to maximize conversions—turning lookers into bookers.</p>
+                             <ul class="service-list">
+                                <li>CTA Optimization</li>
+                                <li>Funnel Structure</li>
+                                <li>Landing Pages</li>
+                                <li>Form Optimization</li>
+                                <li>A/B Improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <div class="service-info">
+                            <h3>Ongoing Website Maintenance</h3>
+                            <p>Peace of mind, guaranteed. I handle the technical headaches—security, updates, and backups—so you can focus on running your business while your site runs perfectly 24/7.</p>
+                             <ul class="service-list">
+                                <li>Regular Updates</li>
+                                <li>Security Monitoring</li>
+                                <li>Backups</li>
+                                <li>Bug Fixes</li>
+                                <li>Uptime Checks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <div class="service-info">
+                            <h3>Website Automation Solutions</h3>
+                            <p>Work smarter, not harder. I integrate your website with CRMs, email marketing, and payment gateways to automate your workflows and save you hours of manual work every week.</p>
+                             <ul class="service-list">
+                                <li>CRM Integration</li>
+                                <li>API Connections</li>
+                                <li>Email Automation</li>
+                                <li>Payment Systems</li>
+                                <li>Booking Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">Featured</p>
+                    <h2 class="section-title">Projects</h2>
+                </div>
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Projects will be loaded dynamically via main.js -->
+                </div>
+                
+                <div style="margin-top: 48px; text-align: center;">
+                    <a href="https://kazimahmad22.github.io/projects" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+            <div class="container">
+                <div class="section-header-flex">
+                    <div class="section-head">
+                        <p class="section-label">Reviews</p>
+                        <h2 class="section-title">What Clients Say</h2>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="nav-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-track">
+                        <!-- Testimonials will be loaded dynamically via main.js -->
+                    </div>
+                </div>
+
+                <div class="testimonials-pagination">
+                    <!-- Dots will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                 <div class="contact-head">
+                    <p class="section-label">Contact</p>
+                    <h2 class="section-title">Let’s Build Your Growth Engine</h2>
+                    <p class="contact-sub">Don't let another lead slip away due to a poor website. Whether you need a complete overhaul to skyrocket your sales or a strategic tune-up to improve speed, I'm ready to help you hit your goals.</p>
+                    <p class="contact-sub" style="margin-top: 24px;">**Ready to Scale?** Connect with me on LinkedIn to discuss your project. I'll audit your current setup and identify hidden revenue opportunities—free of charge.</p>
+                </div>
+                
+                <div class="contact-form-wrapper" style="margin-top: 48px;">
+                    <form action="https://formspree.io/f/xojpbpoj" method="POST" id="contactForm" class="contact-form">
+                        <!-- Personal Info -->
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        
+                        <!-- Project Scope -->
+                        <div class="form-row">
+                            <input type="url" name="website" placeholder="Current Website (Optional)">
+                            <select name="service" required>
+                                <option value="" disabled selected>Service Needed</option>
+                                <option value="New Website">New Website Development</option>
+                                <option value="Redesign">Strategic Redesign</option>
+                                <option value="Optimization">Speed Optimization</option>
+                                <option value="Maintenance">Maintenance & Support</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Logistics -->
+                        <div class="form-row">
+                            <select name="budget" required>
+                                <option value="" disabled selected>Budget Range</option>
+                                <option value="Under $1000">Less than $1,000</option>
+                                <option value="$1000-$3000">$1,000 - $3,000</option>
+                                <option value="$3000+">$3,000+</option>
+                            </select>
+                            <select name="timeline" required>
+                                <option value="" disabled selected>Project Timeline</option>
+                                <option value="ASAP">ASAP</option>
+                                <option value="1 month">Within 1 month</option>
+                                <option value="Flexible">I'm flexible</option>
+                            </select>
+                        </div>
+
+                        <textarea name="message" placeholder="Tell me more about your goals..." rows="5" required></textarea>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Proposal
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-actions" style="margin-top: 24px;">
+                    <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 16px;">Or connect directly:</p>
+                    <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <div class="footer-logo">KA.</div>
+                    <p class="footer-copy">&copy; 2026 Kazim Ahmad. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/kazimahmad22" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="http://instagram.com/kazimahmad_22/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:kazimahmad.business@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Testimonial Modal -->
+    <div id="testimonialModal" class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close Modal">&times;</button>
+            <div class="modal-content">
+                <p id="modalQuote" class="modal-quote"></p>
+                <p id="modalAuthor" class="modal-author"></p>
+            </div>
+        </div>
     </div>
-    <div class="mobNavMenu">
-      <a href="#home">
-        <p>Home</p>
-      </a>
-      <a href="#servicesSection">
-        <p>Service</p>
-      </a>
-      <a href="#portfolioSection">
-        <p>Portfolio</p>
-      </a>
-      <a href="#testimonialsSection">
-        <p>Testimonials</p>
-      </a>
-      <a href="#contact">
-        <p>Contact</p>
-      </a>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-overlay" aria-hidden="true">
+        <div class="mobile-overlay-bg"></div>
+        <div class="mobile-menu-container">
+            <button id="menuClose" class="menu-close-btn" aria-label="Close Menu">&times;</button>
+            <nav class="mobile-nav">
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#services" class="mobile-nav-link">Services</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#testimonials" class="mobile-nav-link">Reviews</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </nav>
+        </div>
     </div>
-    <div class="heroContainer">
-      <div class="heroSection">
-        <div class="left">
-          <div class="hero-text">
-            <h1 class="hero-title">
-              HEY, I'M KAZIM,<br />
-              <span
-                >A CREATIVE UI/UX DESIGNER<br />
-                AND DEVELOPER.</span
-              >
-            </h1>
-            <div class="underline"></div>
-          </div>
-          <div class="btn">
-            <button
-              type="button"
-              onclick="location.href='#portfolioSection'"
-              class="btnSecondary"
-            >
-              View Portfolios
-            </button>
-            <button
-              type="button"
-              onclick="location.href='#contact'"
-              class="btnPrimary"
-            >
-              Let's Talk
-            </button>
-          </div>
-        </div>
-        <div class="right">
-          <img src="./assets/profile picture.webp" alt="Profile Picture" />
-        </div>
-      </div>
-    </div>
-    <div class="skillBar">
-      <div class="skillBar-content">
-        <img src="./assets/star.svg" alt="" />
-        <p>ui/ux</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Development</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Product Design</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Social Media Design</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Branding</p>
-      </div>
-      <div class="skillBar-content" aria-hidden="true">
-        <img src="./assets/star.svg" alt="" />
-        <p>ui/ux</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Development</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Product Design</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Social Media Design</p>
-        <img src="./assets/star.svg" alt="" />
-        <p>Branding</p>
-      </div>
-    </div>
-    <div id="servicesSection" class="servicesSection">
-      <div class="container">
-        <div class="title">
-          <div class="underline2"></div>
-          <h1>Services.</h1>
-          <p>We're pleased to share the services we offer.</p>
-        </div>
-        <div class="cardContainer">
-          <div class="card">
-            <i class="ri-terminal-window-fill"></i>
-            <p>UI/UX Designing</p>
-          </div>
-          <div class="card">
-            <i class="ri-apps-fill"></i>
-            <p>Application UI/UX</p>
-          </div>
-          <div class="card">
-            <i class="ri-html5-fill"></i>
-            <p>Web Development</p>
-          </div>
-          <div class="card">
-            <i class="ri-shapes-fill"></i>
-            <p>Graphic Designing</p>
-          </div>
-          <div class="card">
-            <i class="ri-box-2-fill"></i>
-            <p>Product Designing</p>
-          </div>
-          <div class="card">
-            <i class="ri-article-fill"></i>
-            <p>Social Media Posts</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="portfolioSection" class="portfolioSection">
-      <div class="container">
-        <div class="title">
-          <div id="portfolio" class="underline2"></div>
-          <h1>Portfolios.</h1>
-          <p>I encourage you to check out my portfolios here.</p>
-        </div>
-        <div class="cardContainer">
-          <div class="card">
-            <i class="fa-brands fa-figma"></i>
-            <h2>UI/UX Designing.</h2>
-            <p>
-              We specialize in creating captivating UI/UX designs. Our expertise
-              extends to various projects, including landing pages, e-commerce
-              sites, portfolios, and business websites, all tailored to meet
-              your specific needs.
-            </p>
-          </div>
-          <div class="card">
-            <i class="ri-instance-line"></i>
-            <h2>Graphic Designing.</h2>
-            <p>
-              We offer high-quality Graphic Assets for various projects,
-              including social media posts, logos, business cards, posters,
-              YouTube and blog thumbnails, product labels, and more, tailored to
-              your specific needs.
-            </p>
-          </div>
-          <div class="card">
-            <i class="ri-terminal-box-line"></i>
-            <h2>Web Development.</h2>
-            <p>
-              We provide comprehensive web development services, including
-              business landing pages and product-related site development. Our
-              expertise covers various project types, ensuring a tailored
-              solution for your needs.
-            </p>
-          </div>
-          <div class="card">
-            <i class="ri-instagram-line"></i>
-            <h2>Social Media Post Designing.</h2>
-            <p>
-              Elevate your online presence with our captivating social media
-              post design services. We craft engaging visuals that leave a
-              lasting impression, helping you stand out in the digital world.
-            </p>
-          </div>
-          <div class="card">
-            <i class="ri-smartphone-line"></i>
-            <h2>Mobile App UI/UX.</h2>
-            <p>
-              We specialize in web design and development, as well as
-              professional mobile app UI/UX design services. If you seek
-              expertly crafted mobile app layouts and pages, we are
-              well-equipped to handle your project.
-            </p>
-          </div>
-          <div class="card">
-            <i class="ri-gallery-line"></i>
-            <h2>Gallery.</h2>
-            <p>
-              Explore my portfolio gallery to discover a showcase of my work and
-              creativity. Get inspired and envision how I can bring your
-              projects to life.
-            </p>
-            <a target="_blank" href="https://www.behance.net/kazimahmad_22">
-              <button type="button" id="btnContact" class="btnSecondary">
-                Gallery
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="testimonialsSection" class="testimonialsSection">
-      <div class="container">
-        <div class="title">
-          <div id="testimonial" class="underline2"></div>
-          <h1>Testimonials.</h1>
-          <p>Here are some testimonials from our clients.</p>
-        </div>
-        <div class="cardsContainer">
-          <div class="card">
-            <img src="./assets/DP.webp" alt="" />
-            <p>
-              "This young man- is a great designer. Second time I am working
-              with him. He will be creative with the brief. I am very pleased
-              with the outcome. He also works very hard and listens to clients-
-              I have been picky at time and he made the appropriate amendments.
-              All the best kazim."
-            </p>
-            <h3>
-              <div class="underline3"></div>
-              Vaseem Aziz.
-            </h3>
-          </div>
-          <div class="card">
-            <img src="./assets/DP.webp" alt="" />
-            <p>
-              "Very Hard worked. Listens and understands clients needs. Uses his
-              own initiative to get the job done. Well done."
-            </p>
-            <h3>
-              <div class="underline3"></div>
-              Gaurav Pundir.
-            </h3>
-          </div>
-          <div class="card">
-            <img src="./assets/DP.webp" alt="" />
-            <p>
-              "Kazim was patient and incorporated all the requests with multiple
-              back and forth. I appreciated the willingness to learn new things
-              and reasonably quickly as well. He was always responsive. I will
-              be working with him on future projects! Highly recommend."
-            </p>
-            <h3>
-              <div class="underline3"></div>
-              Anonymous Client.
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footerContainer">
-      <div id="contact" class="footer">
-        <h1>KA.</h1>
-        <div class="contactContainer">
-          <div class="bar">
-            <i class="ri-google-fill"></i>
-            <a href="mailto:kazimahmad.business@gmail.com">
-              <p>kazimahmad.business@gmail.com</p>
-            </a>
-          </div>
-          <div class="bar">
-            <i class="ri-instagram-fill"></i>
-            <a href="https://www.instagram.com/ux_kazim"> <p>ux_kazim   |</p> </a
-            ><a href="https://www.instagram.com/kazimahmad_22">
-              <p>Personal</p>
-            </a>
-          </div>
-          <div class="bar">
-            <i class="ri-behance-fill"></i>
-            <a href="https://www.behance.net/kazimahmad_22">
-              <p>kazimahmad_22</p>
-            </a>
-          </div>
-          <div class="bar">
-            <i class="ri-linkedin-fill"></i>
-            <a href="https://www.linkedin.com/in/kazim-ahmad-633223220/">
-              <p>Kazim Ahmad</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <script type="module" src="./main.js"></script> -->
-    <script src="./main.js"></script>
-  </body>
+
+    <script src="main.js"></script>
+</body>
 </html>

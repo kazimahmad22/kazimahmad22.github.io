@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Kazim Ahmad</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        .error-message {
+            font-size: var(--text-2xl);
+            margin: 24px 0;
+            color: var(--color-text-primary);
+        }
+        .error-btn {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">Oops! The page you're looking for doesn't exist.</h1>
+        <p style="color: var(--color-text-secondary); margin-bottom: 32px;">It looks like you've reached a dead end. Let's get you back to the growth engine.</p>
+        <a href="https://kazimahmad22.github.io/" class="btn btn-primary error-btn">
+            <i class="fas fa-home"></i> Back to Homepage
+        </a>
+    </div>
+</body>
+</html>

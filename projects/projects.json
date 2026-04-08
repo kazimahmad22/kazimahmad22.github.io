@@ -1,0 +1,30 @@
+[
+  {
+    "title": "ICA Thailand",
+    "description": "Streamlining visitor engagement for a leading organization with a clear, service-focused design.",
+    "image": "./assets/ICA Thailand.webp",
+    "tags": ["WordPress", "Elementor", "Figma"],
+    "link": "https://icathailand.ellingtonsupport.com/"
+  },
+  {
+    "title": "Leads Flex",
+    "description": "A high-performance lead generation engine designed to capture inquiries and drive business growth.",
+    "image": "./assets/Leads Flex.webp",
+    "tags": ["WordPress", "Elementor", "Figma"],
+    "link": "https://leadsflex.com/"
+  },
+  {
+    "title": "Melissa Washington",
+    "description": "Building a powerful personal brand that connects with audiences and showcases authority.",
+    "image": "./assets/Melissa Washington.webp",
+    "tags": ["WordPress", "Elementor", "Figma"],
+    "link": "http://www.melissawashington.com/"
+  },
+  {
+    "title": "Snow Buddy Sled Dog Adventure",
+    "description": "Driving bookings through an immersive, adventure-driven digital experience.",
+    "image": "./assets/Snow Buddy Sled Dog Adventure.webp",
+    "tags": ["WordPress", "Elementor", "Figma"],
+    "link": "https://snowbuddysleddogadventures.com/"
+  }
+]
