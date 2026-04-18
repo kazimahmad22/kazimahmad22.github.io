@@ -239,20 +239,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const prevBtn = document.querySelector(".nav-btn.prev");
         const nextBtn = document.querySelector(".nav-btn.next");
 
-        const attemptTestimonialsFetch = async (paths) => {
-            for (const path of paths) {
-                try {
-                    const res = await fetch(path);
-                    if (!res.ok) continue;
-                    const data = await res.json();
-                    renderTestimonials(data);
-                    return true;
-                } catch (e) {
-                    console.warn(`Failed to load testimonials from ${path}:`, e);
-                }
+        const isProjectsPage = window.location.pathname.includes("/projects/") || window.location.pathname.endsWith("/projects");
+
+        // --- Testimonial data embedded directly to avoid fetch() path issues on GitHub Pages ---
+        const TESTIMONIALS_DATA = [
+            {
+                name: "Vaseem Aziz.",
+                content: "This young man- is a great designer. Second time I am working with him. He will be creative with the brief. I am very pleased with the outcome. He also works very hard and listens to clients- I have been picky at time and he made the appropriate amendments. All the best kazim."
+            },
+            {
+                name: "Gaurav Pundir.",
+                content: "Very Hard worked. Listens and understands clients needs. Uses his own initiative to get the job done. Well done."
+            },
+            {
+                name: "Anonymous Client.",
+                content: "Kazim was patient and incorporated all the requests with multiple back and forth. I appreciated the willingness to learn new things and reasonably quickly as well. He was always responsive. I will be working with him on future projects! Highly recommend."
+            },
+            {
+                name: "Anna.",
+                content: "I recently had the pleasure of working with Kazim who completely exceeded my expectations in creating my website. From the start, he demonstrated an impressive level of expertise and technical knowledge, making the entire process seamless and efficient. What truly set him apart, however, was his willingness to go above and beyond what was required. Not only was he incredibly proficient with the latest web development tools and trends, but he was also patient and always took the time to explain complex concepts in a way that made sense, no matter how many questions I had. His communication was clear and prompt, and he consistently kept me updated on the progress of the project. His commitment to quality and attention to detail were evident in every aspect of the site, and he ensured that everything worked perfectly, even after the site went live. I couldn't have asked for a more dedicated and talented professional to help bring my vision to life. If you're looking for a web developer who is not only highly skilled but also goes the extra mile to ensure your satisfaction, I wholeheartedly recommend him!"
             }
-            return false;
-        };
+        ];
 
         const renderTestimonials = (data) => {
             let currentIdx = 0;
@@ -280,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const visibleCards = isMobile ? 1 : 2;
                 const maxPossibleIdx = Math.max(0, data.length - visibleCards);
 
-                // One dot per possible view
                 for (let i = 0; i <= maxPossibleIdx; i++) {
                     const dot = document.createElement("div");
                     dot.className = `dot ${i === currentIdx ? 'active' : ''}`;
@@ -288,7 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     paginationRoot.appendChild(dot);
                 }
                 
-                // Initial slide to update buttons
                 slideTo(currentIdx);
             };
 
@@ -297,34 +302,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 const visibleCards = isMobile ? 1 : 2;
                 const maxPossibleIdx = Math.max(0, data.length - visibleCards);
                 
-                // Clamp index
                 currentIdx = Math.max(0, Math.min(idx, maxPossibleIdx));
                 
                 const gap = 20;
                 const containerWidth = document.querySelector(".testimonials-container").offsetWidth;
-                // Width of one card
                 const cardWidth = (containerWidth - (isMobile ? 0 : gap)) / visibleCards;
                 
                 const moveAmount = currentIdx * (cardWidth + gap);
                 testimonialsTrack.style.transform = `translateX(-${moveAmount}px)`;
                 
-                // Update dots
                 document.querySelectorAll(".dot").forEach((d, i) => {
                     d.classList.toggle("active", i === currentIdx);
                 });
 
-                // Update Navigation Buttons state
                 if (prevBtn) prevBtn.disabled = currentIdx === 0;
                 if (nextBtn) nextBtn.disabled = currentIdx === maxPossibleIdx;
             }
 
             updatePagination();
 
-            // Navigation button listeners
             if (prevBtn) prevBtn.addEventListener("click", () => slideTo(currentIdx - 1));
             if (nextBtn) nextBtn.addEventListener("click", () => slideTo(currentIdx + 1));
 
-            // 3. Handle Modal (added listener once to track)
             testimonialsTrack.addEventListener("click", (e) => {
                 if (e.target.classList.contains("btn-read-more")) {
                     modalQuote.innerText = e.target.getAttribute("data-full");
@@ -339,8 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
 
-        const testimonialsPaths = isProjectsPage ? ["../testimonials.json", "testimonials.json"] : ["./testimonials.json", "testimonials.json"];
-        attemptTestimonialsFetch(testimonialsPaths);
+        renderTestimonials(TESTIMONIALS_DATA);
     }
 
     // --- Mobile Menu Toggle logic ---
