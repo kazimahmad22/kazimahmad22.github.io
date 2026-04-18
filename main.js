@@ -150,77 +150,81 @@ document.addEventListener("DOMContentLoaded", () => {
         // Check if we are in a subdirectory (specifically /projects/)
         const isProjectsPage = window.location.pathname.includes("/projects/") || window.location.pathname.endsWith("/projects");
         
-        // Use a more robust pathing strategy: try to find the root of the site
-        // If we are on the projects page, we need to go up one level for assets
+        // Adjust asset paths based on location
         const assetPrefix = isProjectsPage ? "../" : "./";
-        
-        const attemptFetch = async (paths) => {
-            for (const path of paths) {
-                try {
-                    const response = await fetch(path);
-                    if (!response.ok) continue;
-                    const data = await response.json();
-                    if (!data || !Array.isArray(data)) continue;
-                    
-                    renderProjects(data);
-                    return true;
-                } catch (e) {
-                    console.warn(`Failed to load projects from ${path}:`, e);
+
+        // --- Project data is embedded directly to avoid fetch() path issues on GitHub Pages ---
+        const PROJECTS_DATA = [
+            {
+                title: "ICA Thailand",
+                description: "Streamlining visitor engagement for a leading organization with a clear, service-focused design.",
+                image: "./assets/ICA Thailand.webp",
+                tags: ["WordPress", "Elementor", "Figma"],
+                link: "https://icathailand.ellingtonsupport.com/"
+            },
+            {
+                title: "Leads Flex",
+                description: "A high-performance lead generation engine designed to capture inquiries and drive business growth.",
+                image: "./assets/Leads Flex.webp",
+                tags: ["WordPress", "Elementor", "Figma"],
+                link: "https://leadsflex.com/"
+            },
+            {
+                title: "Melissa Washington",
+                description: "Building a powerful personal brand that connects with audiences and showcases authority.",
+                image: "./assets/Melissa Washington.webp",
+                tags: ["WordPress", "Elementor", "Figma"],
+                link: "http://www.melissawashington.com/"
+            },
+            {
+                title: "Snow Buddy Sled Dog Adventure",
+                description: "Driving bookings through an immersive, adventure-driven digital experience.",
+                image: "./assets/Snow Buddy Sled Dog Adventure.webp",
+                tags: ["WordPress", "Elementor", "Figma"],
+                link: "https://snowbuddysleddogadventures.com/"
+            }
+        ];
+
+        const tagImages = {
+            "WordPress": "assets/wordpress.svg",
+            "Elementor": "assets/elementor.svg",
+            "Figma": "assets/figma.svg"
+        };
+
+        const getImagePath = (path) => {
+            if (path.startsWith("./")) {
+                return assetPrefix + path.substring(2);
+            }
+            return path;
+        };
+
+        projectsGrid.innerHTML = "";
+        PROJECTS_DATA.forEach(project => {
+            const card = document.createElement("div");
+            card.className = "project-card";
+
+            let tagsHtml = `<div class="project-tags" style="display: flex; gap: 8px; align-items: center; margin-bottom: 24px;">`;
+            project.tags.forEach(tag => {
+                if (tagImages[tag]) {
+                    tagsHtml += `<img src="${assetPrefix + tagImages[tag]}" alt="${tag}" title="${tag}" style="width: 20px; height: 20px;">`;
                 }
-            }
-            return false;
-        };
-
-        const renderProjects = (data) => {
-            projectsGrid.innerHTML = ""; 
-            data.forEach(project => {
-                const card = document.createElement("div");
-                card.className = "project-card";
-                
-                const getImagePath = (path) => {
-                    if (path.startsWith("./")) {
-                        return assetPrefix + path.substring(2);
-                    }
-                    return path;
-                };
-
-                const tagImages = {
-                    "WordPress": "assets/wordpress.svg",
-                    "Elementor": "assets/elementor.svg",
-                    "Figma": "assets/figma.svg"
-                };
-                
-                let tagsHtml = `<div class="project-tags" style="display: flex; gap: 8px; align-items: center; margin-bottom: 24px;">`;
-                project.tags.forEach(tag => {
-                    if (tagImages[tag]) {
-                        tagsHtml += `<img src="${assetPrefix + tagImages[tag]}" alt="${tag}" title="${tag}" style="width: 20px; height: 20px;">`;
-                    }
-                });
-                tagsHtml += `</div>`;
-
-                card.innerHTML = `
-                    <div class="project-image-wrapper">
-                        <img src="${getImagePath(project.image)}" alt="${project.title}" class="project-thumb">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3>${project.title}</h3>
-                        </div>
-                        <p>${project.description}</p>
-                        ${tagsHtml}
-                        <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="btn btn-project">Visit Site</a>
-                    </div>
-                `;
-                projectsGrid.appendChild(card);
             });
-        };
+            tagsHtml += `</div>`;
 
-        const paths = isProjectsPage ? ["./projects.json", "projects.json"] : ["./projects/projects.json", "projects/projects.json"];
-        
-        attemptFetch(paths).then(success => {
-            if (!success) {
-                projectsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--color-text-muted); padding: 40px;">Unable to load projects. Please refresh or check back later.</p>`;
-            }
+            card.innerHTML = `
+                <div class="project-image-wrapper">
+                    <img src="${getImagePath(project.image)}" alt="${project.title}" class="project-thumb">
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>${project.title}</h3>
+                    </div>
+                    <p>${project.description}</p>
+                    ${tagsHtml}
+                    <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="btn btn-project">Visit Site</a>
+                </div>
+            `;
+            projectsGrid.appendChild(card);
         });
     }
 
