@@ -147,17 +147,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectsGrid = document.querySelector(".projects-grid");
     
     if (projectsGrid) {
-        // Check if we are in the /projects/ subdirectory
-        const isProjectsPage = window.location.pathname.includes("/projects");
+        // Check if we are in a subdirectory (specifically /projects/)
+        const isProjectsPage = window.location.pathname.includes("/projects/") || window.location.pathname.endsWith("/projects");
         
-        // Adjust paths based on location
-        const jsonPath = isProjectsPage ? "./projects.json" : "./projects/projects.json";
+        // Use a more robust pathing strategy: try to find the root of the site
+        // If we are on the projects page, we need to go up one level for assets
         const assetPrefix = isProjectsPage ? "../" : "./";
+        
+        // Define the JSON path relative to the site root
+        // If we're at /projects/ or /projects/index.html, we fetch projects.json from the same dir
+        // If we're at root, we fetch from ./projects/projects.json
+        const jsonPath = isProjectsPage ? "./projects.json" : "./projects/projects.json";
 
         fetch(jsonPath)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status} at ${jsonPath}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                projectsGrid.innerHTML = ""; // Clear existing content
+                projectsGrid.innerHTML = ""; // Clear existing content only when we have data
+                
+                if (!data || !Array.isArray(data)) {
+                    throw new Error("Invalid projects data format");
+                }
                 
                 data.forEach(project => {
                     const card = document.createElement("div");
@@ -217,7 +231,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const prevBtn = document.querySelector(".nav-btn.prev");
         const nextBtn = document.querySelector(".nav-btn.next");
 
-        fetch("./testimonials.json")
+        const isProjectsPage = window.location.pathname.includes("/projects/") || window.location.pathname.endsWith("/projects");
+        const testimonialsPath = isProjectsPage ? "../testimonials.json" : "./testimonials.json";
+
+        fetch(testimonialsPath)
             .then(res => res.json())
             .then(data => {
                 let currentIdx = 0;
