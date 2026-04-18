@@ -154,70 +154,74 @@ document.addEventListener("DOMContentLoaded", () => {
         // If we are on the projects page, we need to go up one level for assets
         const assetPrefix = isProjectsPage ? "../" : "./";
         
-        // Define the JSON path relative to the site root
-        // If we're at /projects/ or /projects/index.html, we fetch projects.json from the same dir
-        // If we're at root, we fetch from ./projects/projects.json
-        const jsonPath = isProjectsPage ? "./projects.json" : "./projects/projects.json";
-
-        fetch(jsonPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status} at ${jsonPath}`);
+        const attemptFetch = async (paths) => {
+            for (const path of paths) {
+                try {
+                    const response = await fetch(path);
+                    if (!response.ok) continue;
+                    const data = await response.json();
+                    if (!data || !Array.isArray(data)) continue;
+                    
+                    renderProjects(data);
+                    return true;
+                } catch (e) {
+                    console.warn(`Failed to load projects from ${path}:`, e);
                 }
-                return response.json();
-            })
-            .then(data => {
-                projectsGrid.innerHTML = ""; // Clear existing content only when we have data
-                
-                if (!data || !Array.isArray(data)) {
-                    throw new Error("Invalid projects data format");
-                }
-                
-                data.forEach(project => {
-                    const card = document.createElement("div");
-                    card.className = "project-card";
-                    
-                    // Helper to adjust relative paths in data (if they start with ./)
-                    const getImagePath = (path) => {
-                        if (path.startsWith("./")) {
-                            return assetPrefix + path.substring(2);
-                        }
-                        return path;
-                    };
+            }
+            return false;
+        };
 
-                    // Create tags HTML
-                    const tagImages = {
-                        "WordPress": "assets/wordpress.svg",
-                        "Elementor": "assets/elementor.svg",
-                        "Figma": "assets/figma.svg"
-                    };
-                    
-                    let tagsHtml = `<div class="project-tags" style="display: flex; gap: 8px; align-items: center; margin-bottom: 24px;">`;
-                    project.tags.forEach(tag => {
-                        if (tagImages[tag]) {
-                            tagsHtml += `<img src="${assetPrefix + tagImages[tag]}" alt="${tag}" title="${tag}" style="width: 20px; height: 20px;">`;
-                        }
-                    });
-                    tagsHtml += `</div>`;
+        const renderProjects = (data) => {
+            projectsGrid.innerHTML = ""; 
+            data.forEach(project => {
+                const card = document.createElement("div");
+                card.className = "project-card";
+                
+                const getImagePath = (path) => {
+                    if (path.startsWith("./")) {
+                        return assetPrefix + path.substring(2);
+                    }
+                    return path;
+                };
 
-                    card.innerHTML = `
-                        <div class="project-image-wrapper">
-                            <img src="${getImagePath(project.image)}" alt="${project.title}" class="project-thumb">
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3>${project.title}</h3>
-                            </div>
-                            <p>${project.description}</p>
-                            ${tagsHtml}
-                            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="btn btn-project">Visit Site</a>
-                        </div>
-                    `;
-                    
-                    projectsGrid.appendChild(card);
+                const tagImages = {
+                    "WordPress": "assets/wordpress.svg",
+                    "Elementor": "assets/elementor.svg",
+                    "Figma": "assets/figma.svg"
+                };
+                
+                let tagsHtml = `<div class="project-tags" style="display: flex; gap: 8px; align-items: center; margin-bottom: 24px;">`;
+                project.tags.forEach(tag => {
+                    if (tagImages[tag]) {
+                        tagsHtml += `<img src="${assetPrefix + tagImages[tag]}" alt="${tag}" title="${tag}" style="width: 20px; height: 20px;">`;
+                    }
                 });
-            })
-            .catch(error => console.error("Error loading projects:", error));
+                tagsHtml += `</div>`;
+
+                card.innerHTML = `
+                    <div class="project-image-wrapper">
+                        <img src="${getImagePath(project.image)}" alt="${project.title}" class="project-thumb">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>${project.title}</h3>
+                        </div>
+                        <p>${project.description}</p>
+                        ${tagsHtml}
+                        <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="btn btn-project">Visit Site</a>
+                    </div>
+                `;
+                projectsGrid.appendChild(card);
+            });
+        };
+
+        const paths = isProjectsPage ? ["./projects.json", "projects.json"] : ["./projects/projects.json", "projects/projects.json"];
+        
+        attemptFetch(paths).then(success => {
+            if (!success) {
+                projectsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--color-text-muted); padding: 40px;">Unable to load projects. Please refresh or check back later.</p>`;
+            }
+        });
     }
 
     // --- Dynamic Testimonials Rendering & Carousel ---
@@ -231,95 +235,108 @@ document.addEventListener("DOMContentLoaded", () => {
         const prevBtn = document.querySelector(".nav-btn.prev");
         const nextBtn = document.querySelector(".nav-btn.next");
 
-        const isProjectsPage = window.location.pathname.includes("/projects/") || window.location.pathname.endsWith("/projects");
-        const testimonialsPath = isProjectsPage ? "../testimonials.json" : "./testimonials.json";
-
-        fetch(testimonialsPath)
-            .then(res => res.json())
-            .then(data => {
-                let currentIdx = 0;
-                
-                // 1. Render Cards
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "testimonial-card";
-                    const isLong = item.content.length > 200;
-                    card.innerHTML = `
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">${item.content}</p>
-                            ${isLong ? `<button class="btn-read-more" data-full="${item.content.replace(/"/g, '&quot;')}" data-name="${item.name}">Read More</button>` : ''}
-                        </div>
-                        <p class="testimonial-author">${item.name}</p>
-                    `;
-                    testimonialsTrack.appendChild(card);
-                });
-
-                // 2. Setup Carousel & Pagination
-                const updatePagination = () => {
-                    paginationRoot.innerHTML = "";
-                    const isMobile = window.innerWidth <= 768;
-                    const visibleCards = isMobile ? 1 : 2;
-                    const maxPossibleIdx = Math.max(0, data.length - visibleCards);
-
-                    // One dot per possible view
-                    for (let i = 0; i <= maxPossibleIdx; i++) {
-                        const dot = document.createElement("div");
-                        dot.className = `dot ${i === currentIdx ? 'active' : ''}`;
-                        dot.addEventListener("click", () => slideTo(i));
-                        paginationRoot.appendChild(dot);
-                    }
-                    
-                    // Initial slide to update buttons
-                    slideTo(currentIdx);
-                };
-
-                function slideTo(idx) {
-                    const isMobile = window.innerWidth <= 768;
-                    const visibleCards = isMobile ? 1 : 2;
-                    const maxPossibleIdx = Math.max(0, data.length - visibleCards);
-                    
-                    // Clamp index
-                    currentIdx = Math.max(0, Math.min(idx, maxPossibleIdx));
-                    
-                    const gap = 20;
-                    const containerWidth = document.querySelector(".testimonials-container").offsetWidth;
-                    // Width of one card
-                    const cardWidth = (containerWidth - (isMobile ? 0 : gap)) / visibleCards;
-                    
-                    const moveAmount = currentIdx * (cardWidth + gap);
-                    testimonialsTrack.style.transform = `translateX(-${moveAmount}px)`;
-                    
-                    // Update dots
-                    document.querySelectorAll(".dot").forEach((d, i) => {
-                        d.classList.toggle("active", i === currentIdx);
-                    });
-
-                    // Update Navigation Buttons state
-                    if (prevBtn) prevBtn.disabled = currentIdx === 0;
-                    if (nextBtn) nextBtn.disabled = currentIdx === maxPossibleIdx;
+        const attemptTestimonialsFetch = async (paths) => {
+            for (const path of paths) {
+                try {
+                    const res = await fetch(path);
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    renderTestimonials(data);
+                    return true;
+                } catch (e) {
+                    console.warn(`Failed to load testimonials from ${path}:`, e);
                 }
+            }
+            return false;
+        };
 
+        const renderTestimonials = (data) => {
+            let currentIdx = 0;
+            testimonialsTrack.innerHTML = ""; // Clear existing
+            
+            // 1. Render Cards
+            data.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "testimonial-card";
+                const isLong = item.content.length > 200;
+                card.innerHTML = `
+                    <div class="testimonial-content">
+                        <p class="testimonial-quote">${item.content}</p>
+                        ${isLong ? `<button class="btn-read-more" data-full="${item.content.replace(/"/g, '&quot;')}" data-name="${item.name}">Read More</button>` : ''}
+                    </div>
+                    <p class="testimonial-author">${item.name}</p>
+                `;
+                testimonialsTrack.appendChild(card);
+            });
+
+            // 2. Setup Carousel & Pagination
+            const updatePagination = () => {
+                paginationRoot.innerHTML = "";
+                const isMobile = window.innerWidth <= 768;
+                const visibleCards = isMobile ? 1 : 2;
+                const maxPossibleIdx = Math.max(0, data.length - visibleCards);
+
+                // One dot per possible view
+                for (let i = 0; i <= maxPossibleIdx; i++) {
+                    const dot = document.createElement("div");
+                    dot.className = `dot ${i === currentIdx ? 'active' : ''}`;
+                    dot.addEventListener("click", () => slideTo(i));
+                    paginationRoot.appendChild(dot);
+                }
+                
+                // Initial slide to update buttons
+                slideTo(currentIdx);
+            };
+
+            function slideTo(idx) {
+                const isMobile = window.innerWidth <= 768;
+                const visibleCards = isMobile ? 1 : 2;
+                const maxPossibleIdx = Math.max(0, data.length - visibleCards);
+                
+                // Clamp index
+                currentIdx = Math.max(0, Math.min(idx, maxPossibleIdx));
+                
+                const gap = 20;
+                const containerWidth = document.querySelector(".testimonials-container").offsetWidth;
+                // Width of one card
+                const cardWidth = (containerWidth - (isMobile ? 0 : gap)) / visibleCards;
+                
+                const moveAmount = currentIdx * (cardWidth + gap);
+                testimonialsTrack.style.transform = `translateX(-${moveAmount}px)`;
+                
+                // Update dots
+                document.querySelectorAll(".dot").forEach((d, i) => {
+                    d.classList.toggle("active", i === currentIdx);
+                });
+
+                // Update Navigation Buttons state
+                if (prevBtn) prevBtn.disabled = currentIdx === 0;
+                if (nextBtn) nextBtn.disabled = currentIdx === maxPossibleIdx;
+            }
+
+            updatePagination();
+
+            // Navigation button listeners
+            if (prevBtn) prevBtn.addEventListener("click", () => slideTo(currentIdx - 1));
+            if (nextBtn) nextBtn.addEventListener("click", () => slideTo(currentIdx + 1));
+
+            // 3. Handle Modal (added listener once to track)
+            testimonialsTrack.addEventListener("click", (e) => {
+                if (e.target.classList.contains("btn-read-more")) {
+                    modalQuote.innerText = e.target.getAttribute("data-full");
+                    modalAuthor.innerText = e.target.getAttribute("data-name");
+                    modal.classList.add("active");
+                    document.body.style.overflow = "hidden";
+                }
+            });
+
+            window.addEventListener("resize", () => {
                 updatePagination();
+            });
+        };
 
-                // Navigation button listeners
-                if (prevBtn) prevBtn.addEventListener("click", () => slideTo(currentIdx - 1));
-                if (nextBtn) nextBtn.addEventListener("click", () => slideTo(currentIdx + 1));
-
-                // 3. Handle Modal
-                testimonialsTrack.addEventListener("click", (e) => {
-                    if (e.target.classList.contains("btn-read-more")) {
-                        modalQuote.innerText = e.target.getAttribute("data-full");
-                        modalAuthor.innerText = e.target.getAttribute("data-name");
-                        modal.classList.add("active");
-                        document.body.style.overflow = "hidden";
-                    }
-                });
-
-                window.addEventListener("resize", () => {
-                    updatePagination();
-                });
-            })
-            .catch(err => console.error("Error loading testimonials:", err));
+        const testimonialsPaths = isProjectsPage ? ["../testimonials.json", "testimonials.json"] : ["./testimonials.json", "testimonials.json"];
+        attemptTestimonialsFetch(testimonialsPaths);
     }
 
     // --- Mobile Menu Toggle logic ---
