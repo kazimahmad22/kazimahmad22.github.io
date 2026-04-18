@@ -378,4 +378,25 @@ document.addEventListener("DOMContentLoaded", () => {
         closeBtn.addEventListener("click", closeModal);
         overlay.addEventListener("click", closeModal);
     }
+
+    // --- Header Progress Bar Animation ---
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".header-progress", {
+            width: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "html", // Use html instead of body for better stability
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.3
+            }
+        });
+
+        // Ensure recalculation after dynamic content and on reload
+        window.addEventListener('load', () => {
+            ScrollTrigger.refresh();
+        });
+    }
 });
