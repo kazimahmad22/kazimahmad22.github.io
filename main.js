@@ -3,6 +3,35 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+    // --- Custom Cursor Logic ---
+    const cursor = document.querySelector(".custom-cursor");
+    if (cursor && window.matchMedia("(pointer: fine)").matches) {
+        document.addEventListener("mousemove", (e) => {
+            gsap.set(cursor, {
+                x: e.clientX,
+                y: e.clientY
+            });
+
+            if (cursor.style.opacity === "0" || cursor.style.opacity === "") {
+                cursor.style.opacity = "1";
+            }
+        });
+
+        const activeSelectors = ".btn-primary, .btn-project, .nav-link, .dot.active, .nav-btn:hover, .mobile-nav-link";
+
+        document.addEventListener("mouseover", (e) => {
+            if (e.target.closest(activeSelectors)) {
+                cursor.classList.add("active");
+            }
+        });
+
+        document.addEventListener("mouseout", (e) => {
+            if (e.target.closest(activeSelectors)) {
+                cursor.classList.remove("active");
+            }
+        });
+    }
+
     // --- Preloader Logic ---
     const preloader = document.getElementById("preloader");
     const preloaderPercentage = document.getElementById("preloaderPercentage");
