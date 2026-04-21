@@ -3,22 +3,144 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Section Scroll Animations ---
-    const sections = document.querySelectorAll("section");
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+    // --- Preloader Logic ---
+    const preloader = document.getElementById("preloader");
+    const preloaderPercentage = document.getElementById("preloaderPercentage");
+    const preloaderBar = document.getElementById("preloaderBar");
+    const mainContent = document.getElementById("mainContent");
+    
+    let progress = 0;
+    const startTime = Date.now();
+    const targetDuration = 1500; // Snappier load (1.5s)
+
+    const updateProgress = () => {
+        const elapsedTime = Date.now() - startTime;
+        const timeProgress = (elapsedTime / targetDuration) * 100;
+        
+        progress = Math.min(timeProgress, 99);
+        
+        preloaderPercentage.textContent = Math.floor(progress);
+        preloaderBar.style.width = `${progress}%`;
+
+        if (progress < 99) {
+            requestAnimationFrame(updateProgress);
+        }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+    requestAnimationFrame(updateProgress);
+
+    const finishLoading = () => {
+        const elapsedTime = Date.now() - startTime;
+        const waitTime = Math.max(0, targetDuration - elapsedTime);
+
+        setTimeout(() => {
+            progress = 100;
+            preloaderPercentage.textContent = 100;
+            preloaderBar.style.width = "100%";
+
+            if (typeof gsap !== 'undefined') {
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        preloader.style.display = "none";
+                        document.body.style.overflow = "";
+                    }
+                });
+
+                // Faster, snappier exit sequence
+                tl.to([preloaderPercentage, preloaderBar], {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power2.in"
+                });
+
+                tl.to(preloader, {
+                    opacity: 0,
+                    filter: "blur(20px)",
+                    duration: 0.6,
+                    ease: "power2.inOut"
+                }, "-=0.1");
+
+                tl.fromTo(mainContent, 
+                    { filter: "blur(15px)", opacity: 0 },
+                    { 
+                        filter: "blur(0px)", 
+                        opacity: 1,
+                        duration: 0.75, 
+                        ease: "power2.out"
+                    }, 
+                    "-=0.5"
+                );
+                
+                tl.add(() => {
+                    mainContent.classList.add("active");
+                }, "-=0.75");
+            } else {
+                // Fallback
+                preloader.style.opacity = "0";
+                mainContent.classList.add("active");
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                    document.body.style.overflow = "";
+                }, 600);
+            }
+        }, waitTime);
+    };
+
+    window.addEventListener("load", finishLoading);
+    
+    // Safety
+    setTimeout(() => {
+        if (progress < 100) finishLoading();
+    }, 5000);
+
+    // Initial state
+    document.body.style.overflow = "hidden";
+    // --- GSAP Scroll Entrance Animations ---
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Configure smooth reveal for each section
+        const sections = gsap.utils.toArray(".section");
+        
+        sections.forEach((section) => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%", // Trigger when section top hits 85% of viewport
+                    toggleActions: "play none none none" // Only play once
+                }
+            });
+
+            // 1. Reveal Section Container
+            tl.fromTo(section, 
+                { 
+                    opacity: 0, 
+                    filter: "blur(10px)",
+                    y: 20
+                },
+                { 
+                    opacity: 1, 
+                    filter: "blur(0px)",
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }
+            );
+
+            // 2. Stagger internal elements
+            const staggerElements = section.querySelectorAll(".section-head, .hero-content > *, .about-text, .service-card, .project-card, .testimonials-container, .contact-container > *");
+            
+            if (staggerElements.length > 0) {
+                tl.from(staggerElements, {
+                    opacity: 0,
+                    y: 20,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                }, "-=0.6"); // Start slightly before section reveal finishes
             }
         });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
+    }
 
     // --- Header Scroll Effect ---
     const header = document.querySelector(".header");
@@ -199,9 +321,10 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         projectsGrid.innerHTML = "";
-        PROJECTS_DATA.forEach(project => {
+        PROJECTS_DATA.forEach((project, index) => {
             const card = document.createElement("div");
             card.className = "project-card";
+            card.style.animationDelay = `${(index + 1) * 0.1}s`;
 
             let tagsHtml = `<div class="project-tags" style="display: flex; gap: 8px; align-items: center; margin-bottom: 24px;">`;
             project.tags.forEach(tag => {

@@ -59,6 +59,15 @@
     </script>
 </head>
 <body class="antialiased">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div id="preloaderPercentage" class="preloader-percentage">0</div>
+        </div>
+        <div class="preloader-bar-container">
+            <div id="preloaderBar" class="preloader-bar"></div>
+        </div>
+    </div>
 
     <!-- Header -->
     <header class="header">
@@ -88,297 +97,297 @@
                 </div>
             </div>
         </div>
-        <!-- Scroll Progress Bar -->
         <div class="header-progress-container">
             <div id="headerProgress" class="header-progress"></div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container hero-container">
-                <div class="hero-visual">
-                    <img src="./assets/profile picture.webp" alt="Kazim Ahmad" class="hero-avatar">
-                </div>
-                <div class="hero-content">
-                    <h1 class="hero-title">I'm Kazim. <br><span class="text-highlight">I build websites<br> that grow your business.</span></h1>
-                    <p class="hero-subtitle">A website should do more than look good. I build sites that are fast, clear, and structured to turn visitors into paying customers. If your current site is not doing that, let's fix it.</p>
-                    
-                    <div class="hero-ctas">
-                        <a href="https://drive.google.com/file/d/197BPtk3eGa-qynKx6C_Vy-Nmn9pDhew-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-alt"></i> View Resume</a>
-                        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+    <div id="mainContent" class="main-content-blur">
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="container hero-container">
+                    <div class="hero-visual">
+                        <img src="./assets/profile picture.webp" alt="Kazim Ahmad" class="hero-avatar">
                     </div>
-
-                     <div class="social-links-hero">
-                          <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                          <a href="https://github.com/kazimahmad22" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                          <a href="http://instagram.com/kazimahmad_22/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                          <a href="mailto:kazimahmad.business@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About / Featured Section (Mimicking 'Experience' layout) -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <p class="section-label">About</p>
-                    <h2 class="section-title">Who I Am</h2>
-                </div>
-                <div class="about-grid">
-                     <div class="about-text">
-                        <p>A website either works or it doesn't. I build sites that are structured to guide visitors toward a decision, whether that is making a purchase, booking a call, or submitting an enquiry. I focus on what actually moves the needle for your business, not just how the site looks.</p>
-                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <p class="section-label">Expertise</p>
-                    <h2 class="section-title">What I Do</h2>
-                </div>
-                
-                <div class="services-grid">
-                    <!-- Service 1 -->
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                        <div class="service-info">
-                            <h3>Website Development</h3>
-                            <p>I build sites with a clear purpose: getting visitors to take the next step. Every page is structured to answer the right questions at the right moment, so by the time someone considers reaching out, the decision feels easy.</p>
-                             <ul class="service-list">
-                                <li>Custom Design</li>
-                                <li>Responsive Layout</li>
-                                <li>Fast Loading</li>
-                                <li>SEO Structure</li>
-                                <li>Lead-Focused Pages</li>
-                            </ul>
+                    <div class="hero-content">
+                        <h1 class="hero-title">I'm Kazim. <br><span class="text-highlight">I build websites<br> that grow your business.</span></h1>
+                        <p class="hero-subtitle">A website should do more than look good. I build sites that are fast, clear, and structured to turn visitors into paying customers. If your current site is not doing that, let's fix it.</p>
+                        
+                        <div class="hero-ctas">
+                            <a href="https://drive.google.com/file/d/197BPtk3eGa-qynKx6C_Vy-Nmn9pDhew-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-alt"></i> View Resume</a>
+                            <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
                         </div>
-                    </div>
 
-                    <!-- Service 2 -->
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
-                        <div class="service-info">
-                            <h3>Website Redesign</h3>
-                            <p>An outdated or confusing site actively pushes customers away. I identify the structural issues causing drop-off and rebuild the experience so it instills confidence and drives enquiries.</p>
-                             <ul class="service-list">
-                                <li>Modern UI</li>
-                                <li>UX Improvements</li>
-                                <li>Clear Messaging</li>
-                                <li>Conversion Layout</li>
-                                <li>Mobile Optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <div class="service-info">
-                            <h3>Speed Optimization</h3>
-                            <p>Page speed directly affects whether visitors stay and whether Google ranks you. I identify what is slowing your site down and resolve it, so you stop losing traffic before it even has a chance to convert.</p>
-                             <ul class="service-list">
-                                <li>Core Web Vitals</li>
-                                <li>Image Optimization</li>
-                                <li>Code Cleanup</li>
-                                <li>Caching Setup</li>
-                                <li>Performance Tuning</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="service-info">
-                            <h3>Conversion Improvements</h3>
-                            <p>Traffic means nothing without action. I analyse where visitors are leaving your site and make targeted improvements to your page structure, messaging, and calls to action to bring your conversion rate up.</p>
-                             <ul class="service-list">
-                                <li>CTA Optimization</li>
-                                <li>Funnel Structure</li>
-                                <li>Landing Pages</li>
-                                <li>Form Optimization</li>
-                                <li>A/B Improvements</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 5 -->
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-tools"></i></div>
-                        <div class="service-info">
-                            <h3>Maintenance and Updates</h3>
-                            <p>Websites require regular maintenance to stay secure, fast, and functional. I handle updates and technical upkeep on an ongoing basis so your site keeps running without you having to think about it.</p>
-                             <ul class="service-list">
-                                <li>Regular Updates</li>
-                                <li>Security Monitoring</li>
-                                <li>Backups</li>
-                                <li>Bug Fixes</li>
-                                <li>Uptime Checks</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 6 -->
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-robot"></i></div>
-                        <div class="service-info">
-                            <h3>Integrations and Connections</h3>
-                            <p>If you rely on external tools to manage customers, bookings, or communications, I can integrate them directly with your website so your systems work together and your team saves time.</p>
-                             <ul class="service-list">
-                                <li>CRM Integration</li>
-                                <li>API Connections</li>
-                                <li>Email Automation</li>
-                                <li>Payment Systems</li>
-                                <li>Booking Systems</li>
-                            </ul>
-                        </div>
+                         <div class="social-links-hero">
+                              <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                              <a href="https://github.com/kazimahmad22" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                              <a href="http://instagram.com/kazimahmad_22/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                              <a href="mailto:kazimahmad.business@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Projects Section -->
-        <section  id="projects" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <p class="section-label">Featured</p>
-                    <h2 class="section-title">Projects</h2>
-                </div>
-                <!-- Projects Grid -->
-                <div class="projects-grid">
-                    <!-- Projects will be loaded dynamically via main.js -->
-                </div>
-                
-                <div style="margin-top: 48px; text-align: center;">
-                    <a  href="https://kazimahmad22.github.io/projects/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View All Projects</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="section">
-            <div class="container">
-                <div class="section-header-flex">
+            <!-- About / Featured Section (Mimicking 'Experience' layout) -->
+            <section id="about" class="section">
+                <div class="container">
                     <div class="section-head">
-                        <p class="section-label">Reviews</p>
-                        <h2 class="section-title">What Clients Say</h2>
+                        <p class="section-label">About</p>
+                        <h2 class="section-title">Who I Am</h2>
                     </div>
-                    <div class="carousel-nav">
-                        <button class="nav-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-                        <button class="nav-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="testimonials-container">
-                    <div class="testimonials-track">
-                        <!-- Testimonials will be loaded dynamically via main.js -->
+                    <div class="about-grid">
+                         <div class="about-text">
+                            <p>A website either works or it doesn't. I build sites that are structured to guide visitors toward a decision, whether that is making a purchase, booking a call, or submitting an enquiry. I focus on what actually moves the needle for your business, not just how the site looks.</p>
+                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="testimonials-pagination">
-                    <!-- Dots will be added here -->
-                </div>
-            </div>
-        </section>
+            <!-- Services Section -->
+            <section id="services" class="section">
+                <div class="container">
+                    <div class="section-head">
+                        <p class="section-label">Expertise</p>
+                        <h2 class="section-title">What I Do</h2>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <!-- Service 1 -->
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="service-info">
+                                <h3>Website Development</h3>
+                                <p>I build sites with a clear purpose: getting visitors to take the next step. Every page is structured to answer the right questions at the right moment, so by the time someone considers reaching out, the decision feels easy.</p>
+                                 <ul class="service-list">
+                                    <li>Custom Design</li>
+                                    <li>Responsive Layout</li>
+                                    <li>Fast Loading</li>
+                                    <li>SEO Structure</li>
+                                    <li>Lead-Focused Pages</li>
+                                </ul>
+                            </div>
+                        </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
+                        <!-- Service 2 -->
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <div class="service-info">
+                                <h3>Website Redesign</h3>
+                                <p>An outdated or confusing site actively pushes customers away. I identify the structural issues causing drop-off and rebuild the experience so it instills confidence and drives enquiries.</p>
+                                 <ul class="service-list">
+                                    <li>Modern UI</li>
+                                    <li>UX Improvements</li>
+                                    <li>Clear Messaging</li>
+                                    <li>Conversion Layout</li>
+                                    <li>Mobile Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="service-info">
+                                <h3>Speed Optimization</h3>
+                                <p>Page speed directly affects whether visitors stay and whether Google ranks you. I identify what is slowing your site down and resolve it, so you stop losing traffic before it even has a chance to convert.</p>
+                                 <ul class="service-list">
+                                    <li>Core Web Vitals</li>
+                                    <li>Image Optimization</li>
+                                    <li>Code Cleanup</li>
+                                    <li>Caching Setup</li>
+                                    <li>Performance Tuning</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="service-info">
+                                <h3>Conversion Improvements</h3>
+                                <p>Traffic means nothing without action. I analyse where visitors are leaving your site and make targeted improvements to your page structure, messaging, and calls to action to bring your conversion rate up.</p>
+                                 <ul class="service-list">
+                                    <li>CTA Optimization</li>
+                                    <li>Funnel Structure</li>
+                                    <li>Landing Pages</li>
+                                    <li>Form Optimization</li>
+                                    <li>A/B Improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Service 5 -->
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-tools"></i></div>
+                            <div class="service-info">
+                                <h3>Maintenance and Updates</h3>
+                                <p>Websites require regular maintenance to stay secure, fast, and functional. I handle updates and technical upkeep on an ongoing basis so your site keeps running without you having to think about it.</p>
+                                 <ul class="service-list">
+                                    <li>Regular Updates</li>
+                                    <li>Security Monitoring</li>
+                                    <li>Backups</li>
+                                    <li>Bug Fixes</li>
+                                    <li>Uptime Checks</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Service 6 -->
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-robot"></i></div>
+                            <div class="service-info">
+                                <h3>Integrations and Connections</h3>
+                                <p>If you rely on external tools to manage customers, bookings, or communications, I can integrate them directly with your website so your systems work together and your team saves time.</p>
+                                 <ul class="service-list">
+                                    <li>CRM Integration</li>
+                                    <li>API Connections</li>
+                                    <li>Email Automation</li>
+                                    <li>Payment Systems</li>
+                                    <li>Booking Systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section  id="projects" class="section">
+                <div class="container">
+                    <div class="section-head">
+                        <p class="section-label">Featured</p>
+                        <h2 class="section-title">Projects</h2>
+                    </div>
+                    <!-- Projects Grid -->
+                    <div class="projects-grid">
+                        <!-- Projects will be loaded dynamically via main.js -->
+                    </div>
+                    
+                    <div style="margin-top: 48px; text-align: center;">
+                        <a  href="https://kazimahmad22.github.io/projects/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View All Projects</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="section">
+                <div class="container">
+                    <div class="section-header-flex">
+                        <div class="section-head">
+                            <p class="section-label">Reviews</p>
+                            <h2 class="section-title">What Clients Say</h2>
+                        </div>
+                        <div class="carousel-nav">
+                            <button class="nav-btn prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                            <button class="nav-btn next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonials-container">
+                        <div class="testimonials-track">
+                            <!-- Testimonials will be loaded dynamically via main.js -->
+                        </div>
+                    </div>
+
+                    <div class="testimonials-pagination">
+                        <!-- Dots will be added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div class="container">
+                     <div class="contact-head">
+                        <p class="section-label">Contact</p>
+                        <h2 class="section-title">Let's talk about your project.</h2>
+                        <p class="contact-sub">Fill in the form and I will get back to you within one business day. Tell me where you are, what you need, and I will let you know how I can help.</p>
+                        <p class="contact-sub" style="margin-top: 24px;">Prefer a quick conversation first? Reach out on LinkedIn.</p>
+                    </div>
+                    
+                    <div class="contact-form-wrapper" style="margin-top: 48px;">
+                        <form action="https://formspree.io/f/xojpbpoj" method="POST" id="contactForm" class="contact-form">
+                            <!-- Personal Info -->
+                            <div class="form-row">
+                                <input type="text" name="name" placeholder="Full Name" required>
+                                <input type="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            
+                            <!-- Project Scope -->
+                            <div class="form-row">
+                                <input type="url" name="website" placeholder="Current Website (Optional)">
+                                <select name="service" required>
+                                    <option value="" disabled selected>Service Needed</option>
+                                    <option value="New Website">New Website Development</option>
+                                    <option value="Redesign">Strategic Redesign</option>
+                                    <option value="Optimization">Speed Optimization</option>
+                                    <option value="Maintenance">Maintenance & Support</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Logistics -->
+                            <div class="form-row">
+                                <select name="budget" required>
+                                    <option value="" disabled selected>Budget Range</option>
+                                    <option value="Under $1000">Less than $1,000</option>
+                                    <option value="$1000-$3000">$1,000 - $3,000</option>
+                                    <option value="$3000+">$3,000+</option>
+                                </select>
+                                <select name="timeline" required>
+                                    <option value="" disabled selected>Project Timeline</option>
+                                    <option value="ASAP">ASAP</option>
+                                    <option value="1 month">Within 1 month</option>
+                                    <option value="Flexible">I'm flexible</option>
+                                </select>
+                            </div>
+
+                            <textarea name="message" placeholder="Tell me more about your goals..." rows="5" required></textarea>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-paper-plane"></i> Send Proposal
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-actions" style="margin-top: 24px;">
+                        <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 16px;">Or connect directly:</p>
+                        <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
             <div class="container">
-                 <div class="contact-head">
-                    <p class="section-label">Contact</p>
-                    <h2 class="section-title">Let's talk about your project.</h2>
-                    <p class="contact-sub">Fill in the form and I will get back to you within one business day. Tell me where you are, what you need, and I will let you know how I can help.</p>
-                    <p class="contact-sub" style="margin-top: 24px;">Prefer a quick conversation first? Reach out on LinkedIn.</p>
-                </div>
-                
-                <div class="contact-form-wrapper" style="margin-top: 48px;">
-                    <form action="https://formspree.io/f/xojpbpoj" method="POST" id="contactForm" class="contact-form">
-                        <!-- Personal Info -->
-                        <div class="form-row">
-                            <input type="text" name="name" placeholder="Full Name" required>
-                            <input type="email" name="email" placeholder="Email Address" required>
+                <div class="footer-inner">
+                    <div class="footer-left">
+                        <div class="footer-logo">KA.</div>
+                        <p class="footer-copy">&copy; 2026 Kazim Ahmad. All rights reserved.</p>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-socials">
+                            <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/kazimahmad22" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="http://instagram.com/kazimahmad_22/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="mailto:kazimahmad.business@gmail.com" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
                         </div>
-                        
-                        <!-- Project Scope -->
-                        <div class="form-row">
-                            <input type="url" name="website" placeholder="Current Website (Optional)">
-                            <select name="service" required>
-                                <option value="" disabled selected>Service Needed</option>
-                                <option value="New Website">New Website Development</option>
-                                <option value="Redesign">Strategic Redesign</option>
-                                <option value="Optimization">Speed Optimization</option>
-                                <option value="Maintenance">Maintenance & Support</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-
-                        <!-- Logistics -->
-                        <div class="form-row">
-                            <select name="budget" required>
-                                <option value="" disabled selected>Budget Range</option>
-                                <option value="Under $1000">Less than $1,000</option>
-                                <option value="$1000-$3000">$1,000 - $3,000</option>
-                                <option value="$3000+">$3,000+</option>
-                            </select>
-                            <select name="timeline" required>
-                                <option value="" disabled selected>Project Timeline</option>
-                                <option value="ASAP">ASAP</option>
-                                <option value="1 month">Within 1 month</option>
-                                <option value="Flexible">I'm flexible</option>
-                            </select>
-                        </div>
-
-                        <textarea name="message" placeholder="Tell me more about your goals..." rows="5" required></textarea>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Send Proposal
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="contact-actions" style="margin-top: 24px;">
-                    <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 16px;">Or connect directly:</p>
-                    <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-left">
-                    <div class="footer-logo">KA.</div>
-                    <p class="footer-copy">&copy; 2026 Kazim Ahmad. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/kazim-ahmad-633223220" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/kazimahmad22" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="http://instagram.com/kazimahmad_22/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:kazimahmad.business@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+    </div>
 
     <!-- Testimonial Modal -->
     <div id="testimonialModal" class="modal" aria-hidden="true">
@@ -406,8 +415,6 @@
             </nav>
         </div>
     </div>
-
-
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
