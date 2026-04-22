@@ -4,44 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | Kazim Ahmad</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom Style -->
     <link rel="stylesheet" href="style.css">
+
     <style>
-        .error-container {
-            height: 100vh;
+        .error-section {
+            height: 100dvh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        }
+
+        .header-spacer {
+            height: var(--header-height, 72px);
+            flex-shrink: 0;
+        }
+
+        .error-container-centered {
+            flex: 1;
+            display: flex;
             align-items: center;
-            text-align: center;
+            justify-content: center;
             padding: 24px;
         }
-        .error-code {
-            font-size: 120px;
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .error-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 99px;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--color-lime);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+        }
+
+        .error-title-main {
+            font-size: clamp(6rem, 15vw, 12rem);
+            line-height: 0.8;
             font-weight: 800;
+            margin-bottom: 32px;
             background: var(--gradient-text);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1;
+            letter-spacing: -0.05em;
         }
-        .error-message {
-            font-size: var(--text-2xl);
-            margin: 24px 0;
+
+        .error-message-box h1 {
+            font-size: var(--text-3xl);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .error-message-box p {
+            color: var(--color-text-secondary);
+            margin-bottom: 40px;
+            font-size: var(--text-lg);
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .helpful-links {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .helpful-links-title {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
             color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            transition: all 0.3s var(--ease-out-premium);
         }
-        .error-btn {
-            margin-top: 16px;
+
+        .link-item i {
+            font-size: 14px;
+            color: var(--color-lime);
+        }
+
+        .link-item:hover {
+            border-color: var(--color-lime);
+            transform: translateY(-2px);
+            background: var(--color-bg-primary);
+        }
+
+        @media (max-width: 768px) {
+            .error-title-main {
+                font-size: 8rem;
+            }
+            .error-actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
-<body>
-    <div class="error-container">
-        <div class="error-code">404</div>
-        <h1 class="error-message">Oops! The page you're looking for doesn't exist.</h1>
-        <p style="color: var(--color-text-secondary); margin-bottom: 32px;">It looks like you've reached a dead end. Let's get you back to the growth engine.</p>
-        <a href="https://kazimahmad22.github.io/" class="btn btn-primary error-btn">
-            <i class="fas fa-home"></i> Back to Homepage
-        </a>
+<body class="antialiased">
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                 <div class="header-left">
+                    <a href="https://kazimahmad22.github.io/" class="logo-btn">
+                        <span class="header-logo-text">KA.</span>
+                    </a>
+                 </div>
+
+                 <nav class="nav">
+                    <a href="https://kazimahmad22.github.io/#about" class="nav-link">About</a>
+                    <a href="https://kazimahmad22.github.io/#services" class="nav-link">Services</a>
+                    <a href="https://kazimahmad22.github.io/#projects" class="nav-link">Projects</a>
+                    <a href="https://kazimahmad22.github.io/#testimonials" class="nav-link">Reviews</a>
+                    <a href="https://kazimahmad22.github.io/#contact" class="nav-link">Contact</a>
+                 </nav>
+
+                <div class="header-right">
+                    <button class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="menuToggle" class="menu-toggle-btn" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section class="error-section">
+            <div class="header-spacer"></div>
+            <div class="error-container-centered">
+                <div class="error-content">
+                    <div class="error-badge">Error Code: 404</div>
+                    <div class="error-title-main">404</div>
+                    
+                    <div class="error-message-box">
+                        <h1>Oops! We've Lost the Trail.</h1>
+                        <p>The page you're looking for was moved, renamed, or perhaps never existed. Let's get you back on track.</p>
+                    </div>
+
+                    <div class="error-actions">
+                        <a href="/" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Return to Safety
+                        </a>
+                        <!-- <a href="https://kazimahmad22.github.io/#projects" class="btn btn-secondary">
+                            <i class="fas fa-th-large"></i> Explore Projects
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-overlay" aria-hidden="true">
+        <div class="mobile-overlay-bg"></div>
+        <div class="mobile-menu-container">
+            <button id="menuClose" class="menu-close-btn" aria-label="Close Menu">&times;</button>
+            <nav class="mobile-nav">
+                <a href="https://kazimahmad22.github.io/#about" class="mobile-nav-link">About</a>
+                <a href="https://kazimahmad22.github.io/#services" class="mobile-nav-link">Services</a>
+                <a href="https://kazimahmad22.github.io/#projects" class="mobile-nav-link">Projects</a>
+                <a href="https://kazimahmad22.github.io/#testimonials" class="mobile-nav-link">Reviews</a>
+                <a href="https://kazimahmad22.github.io/#contact" class="mobile-nav-link">Contact</a>
+            </nav>
+        </div>
     </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Theme Toggle Logic (Minimal)
+            const themeBtn = document.querySelector(".theme-toggle");
+            const themeIcon = themeBtn.querySelector("i");
+            const body = document.body;
+
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                body.classList.add("light-mode");
+                themeIcon.classList.replace("fa-moon", "fa-sun");
+            }
+
+            themeBtn.addEventListener("click", () => {
+                body.classList.toggle("light-mode");
+                const isLight = body.classList.contains("light-mode");
+                themeIcon.classList.toggle("fa-moon", !isLight);
+                themeIcon.classList.toggle("fa-sun", isLight);
+                localStorage.setItem("theme", isLight ? "light" : "dark");
+            });
+
+            // Mobile Menu Logic
+            const menuToggle = document.getElementById("menuToggle");
+            const menuClose = document.getElementById("menuClose");
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            menuToggle.addEventListener("click", () => mobileMenu.classList.add("active"));
+            menuClose.addEventListener("click", () => mobileMenu.classList.remove("active"));
+
+            // Animation Logic
+            gsap.from(".error-title-main", {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out"
+            });
+
+            gsap.from(".error-badge, .error-message-box > *, .error-actions, .helpful-links", {
+                y: 30,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 1,
+                ease: "power3.out",
+                delay: 0.3
+            });
+
+            // Custom Cursor (Simplified)
+            const cursor = document.querySelector(".custom-cursor");
+            if (cursor && window.matchMedia("(pointer: fine)").matches) {
+                document.addEventListener("mousemove", (e) => {
+                    gsap.to(cursor, {
+                        x: e.clientX,
+                        y: e.clientY,
+                        duration: 0.1
+                    });
+                    cursor.style.opacity = "1";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
