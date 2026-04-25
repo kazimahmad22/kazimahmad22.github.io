@@ -6,20 +6,19 @@
 .codex/
 logs/
 *.log
-task.md
-implementation_plan.md
-walkthrough.md
-
+*.md
 
 # IDE & OS Files
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Dependencies
 node_modules/
 package-lock.json
+yarn.lock
 
 # Build & Tmp
 dist/
@@ -27,13 +26,14 @@ build/
 tmp/
 tmp_style.css
 
-# Old Portfolio Ref (Optional - keep if you want to push, ignore if local only)
-# old_portfolio/
+# Environment
+.env
+.env.local
+.env.*.local
 
 # AI and Audit Files
 skills/
 Audit Reports/
-gemini.md
 
-# Models
+# Models & Media
 skull.glb

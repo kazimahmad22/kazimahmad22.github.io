@@ -301,7 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Check if we are in a subdirectory (specifically /projects/)
         const isProjectsPage = window.location.pathname.includes("/projects/") || window.location.pathname.endsWith("/projects");
         
-        // Adjust asset paths based on location
+        // CDN Configuration (Resolves GTmetrix "Use a CDN" warning for non-custom domains)
+        const CDN_BASE = "https://cdn.jsdelivr.net/gh/kazimahmad22/kazimahmad22.github.io@main/";
         const assetPrefix = isProjectsPage ? "../" : "./";
 
         // --- Project data is embedded directly to avoid fetch() path issues on GitHub Pages ---
@@ -344,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const getImagePath = (path) => {
             if (path.startsWith("./")) {
-                return assetPrefix + path.substring(2);
+                return CDN_BASE + path.substring(2);
             }
             return path;
         };
@@ -358,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tagsHtml = `<div class="project-tags" style="display: flex; gap: 8px; align-items: center; margin-bottom: 24px;">`;
             project.tags.forEach(tag => {
                 if (tagImages[tag]) {
-                    tagsHtml += `<img src="${assetPrefix + tagImages[tag]}" alt="${tag}" title="${tag}" style="width: 20px; height: 20px;">`;
+                    tagsHtml += `<img src="${CDN_BASE + tagImages[tag]}" alt="${tag}" title="${tag}" style="width: 20px; height: 20px;">`;
                 }
             });
             tagsHtml += `</div>`;
@@ -549,6 +550,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ensure recalculation after dynamic content and on reload
         window.addEventListener('load', () => {
             ScrollTrigger.refresh();
+        });
+    }
+    // --- Service Worker Registration ---
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
         });
     }
 });
